@@ -1,0 +1,930 @@
+Mplus VERSION 8.7
+MUTHEN & MUTHEN
+12/01/2021   9:35 PM
+
+INPUT INSTRUCTIONS
+
+  Title: LPA Model 2 (4 profile) with free means and variance for Self Profile
+  
+      Data: File is 1stOrdCFA.dat;
+      	  Format = Free;
+      	
+  Variable: Names ARE
+          SelCop4-SelCop10 
+          SelSym5-SelSym10 
+          SelIS1-SelIS10 
+          SelCon1-SelCon5 SelCon7 SelCon8
+          SelPer1-SelPer5 SelPer7-SelPer10
+          SelRoA1-SelRoA7
+          SelInt1-SelInt5
+          RandomID
+          SelCop Coop_SE
+          SelSym Symp_SE
+          SelInSt InSt_SE
+          SelCon Cons_SE
+          SelPer Pers_SE
+          SelRoA RoAs_SE
+          SelInt Intg_SE;
+  
+  IDvariable = RandomID;
+  Missing are all (-99);
+  Usevariables are
+          SelInSt
+          SelCon
+          SelPer
+          SelRoA
+          SelInt;
+      	
+      	Classes = c (4) ;
+  
+      Analysis:
+      	Type = Mixture ;
+      	Estimator = MLR ;
+      	Starts = 3000 100 ;
+  
+      Model:
+      	%OVERALL%
+      SelInSt SelCon SelPer SelRoA SelInt;
+      	[SelInSt SelCon SelPer SelRoA SelInt];
+      	
+      	%C#1%
+      SelInSt SelCon SelPer SelRoA SelInt;
+      	[SelInSt SelCon SelPer SelRoA SelInt];
+
+      	%C#2%
+      SelInSt SelCon SelPer SelRoA SelInt;
+      	[SelInSt SelCon SelPer SelRoA SelInt];
+
+      	%C#3%
+      SelInSt SelCon SelPer SelRoA SelInt;
+      	[SelInSt SelCon SelPer SelRoA SelInt];
+
+          %C#4%
+      SelInSt SelCon SelPer SelRoA SelInt;
+      	[SelInSt SelCon SelPer SelRoA SelInt];
+  
+      Output: Sampstat Standardized stdyx TECH1 TECH7 TECH11 TECH14;
+
+
+
+*** WARNING in MODEL command
+  All variables are uncorrelated with all other variables within class.
+  Check that this is what is intended.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+LPA Model 2 (4 profile) with free means and variance for Self Profile
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         336
+
+Number of dependent variables                                    5
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   SELINST     SELCON      SELPER      SELROA      SELINT
+
+Categorical latent variables
+   C
+
+Variables with special functions
+
+  ID variable           RANDOMID
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                       3000
+  Number of final stage optimizations                          100
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+
+Input data file(s)
+  1stOrdCFA.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             1
+     Number of y missing data patterns           1
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        1.000
+ SELCON         1.000         1.000
+ SELPER         1.000         1.000         1.000
+ SELROA         1.000         1.000         1.000         1.000
+ SELINT         1.000         1.000         1.000         1.000         1.000
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           Covariances
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.366
+ SELCON         0.392         0.445
+ SELPER         0.284         0.301         0.306
+ SELROA         0.068         0.096        -0.059         0.678
+ SELINT         0.425         0.483         0.336         0.111         0.545
+
+
+           Correlations
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        1.000
+ SELCON         0.970         1.000
+ SELPER         0.848         0.816         1.000
+ SELROA         0.137         0.175        -0.130         1.000
+ SELINT         0.951         0.982         0.824         0.182         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -403.229
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     SELINST               0.000      -0.473      -2.162    0.30%      -0.532     -0.115      0.100
+             336.000       0.366      -0.236       1.064    0.30%       0.251      0.551
+     SELCON                0.000      -0.456      -2.322    0.30%      -0.594     -0.157      0.053
+             336.000       0.445      -0.305       1.226    0.30%       0.255      0.623
+     SELPER                0.000      -0.445      -1.994    0.30%      -0.424     -0.125      0.011
+             336.000       0.306       0.182       1.113    0.30%       0.143      0.529
+     SELROA                0.000       0.129      -1.660    0.30%      -0.766     -0.310     -0.094
+             336.000       0.678      -0.937       1.609    0.30%       0.154      0.833
+     SELINT                0.000      -0.445      -2.410    0.30%      -0.618     -0.160      0.024
+             336.000       0.545      -0.414       1.252    0.30%       0.269      0.698
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+444 perturbed starting value run(s) did not converge in the initial stage
+optimizations.
+
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+            -732.865  211555           2243
+            -732.865  428783           1176
+            -732.865  712638           1827
+            -732.865  34050            2235
+            -732.865  264316           2420
+            -732.865  830529           279
+            -732.865  626789           1304
+            -732.865  574412           679
+            -732.865  316694           2320
+            -732.865  66276            217
+            -732.865  655632           2885
+            -732.865  785277           1603
+            -732.865  840031           276
+            -732.865  905166           1042
+            -732.865  971693           470
+            -732.865  97300            640
+            -732.865  965639           463
+            -732.865  842511           2070
+            -732.865  798446           1622
+            -732.865  875431           2148
+            -732.865  706042           1129
+            -732.865  75718            1987
+            -732.865  406263           1618
+            -732.865  492839           1493
+            -732.865  775844           2371
+            -732.865  712702           684
+            -732.865  338029           2234
+            -732.865  261431           2506
+            -732.865  703098           1700
+            -732.865  794804           1211
+            -732.865  243072           2286
+            -732.865  496344           808
+            -732.865  137305           379
+            -732.865  536075           2726
+            -732.865  235154           2601
+            -732.865  357866           968
+            -732.865  545140           278
+            -732.865  733337           1105
+            -732.865  319298           1375
+            -732.865  319993           1480
+            -732.865  862221           2694
+            -732.865  330772           2031
+            -732.865  399508           415
+            -732.865  599136           811
+            -732.865  95624            1605
+            -732.865  43523            297
+            -732.865  392418           28
+            -732.865  414059           1200
+            -732.865  590834           785
+            -732.865  539751           459
+            -732.865  798821           423
+            -732.865  671580           2924
+            -732.865  581389           2505
+            -732.865  783102           433
+            -732.865  703783           2346
+            -732.865  782096           2045
+            -732.865  871438           561
+            -732.865  839460           2507
+            -732.865  443442           380
+            -732.865  299996           1853
+            -732.865  83878            2541
+            -732.865  231400           738
+            -732.865  697540           2448
+            -732.865  987174           1689
+            -732.865  981480           1025
+            -732.865  942358           644
+            -732.865  751054           117
+            -732.865  533738           11
+            -732.865  309989           2428
+            -732.865  328661           813
+            -732.865  268642           2114
+            -732.865  572637           989
+            -732.865  115929           1991
+            -732.865  214260           2283
+            -732.865  608460           244
+            -732.865  782821           272
+            -732.865  609089           241
+            -732.865  997423           2447
+            -732.865  765372           1123
+            -732.865  96362            1801
+            -732.865  780726           1270
+            -732.865  997222           229
+            -748.215  512630           2886
+            -748.215  369684           1309
+            -748.215  528938           1898
+            -748.215  273992           349
+            -748.215  797594           234
+            -748.215  2292             2715
+            -748.215  531546           702
+            -748.215  707200           1005
+            -748.215  291388           2571
+            -748.215  410793           1134
+            -748.215  514936           1793
+            -748.215  879349           1459
+            -748.215  908881           2895
+            -748.215  641965           2699
+            -748.215  604861           800
+            -748.215  20194            2757
+            -748.215  529346           1633
+
+1 perturbed starting value run(s) did not converge or were rejected in the third stage.
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       43
+
+Loglikelihood
+
+          H0 Value                        -732.865
+          H0 Scaling Correction Factor      1.2631
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    1551.731
+          Bayesian (BIC)                  1715.867
+          Sample-Size Adjusted BIC        1579.466
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1         62.06863          0.18473
+       2         67.43158          0.20069
+       3        115.25228          0.34301
+       4         91.24750          0.27157
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1         62.06863          0.18473
+       2         67.43158          0.20069
+       3        115.25228          0.34301
+       4         91.24750          0.27157
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1               61          0.18155
+       2               68          0.20238
+       3              115          0.34226
+       4               92          0.27381
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.949
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.982    0.018    0.000    0.000
+    2   0.032    0.949    0.000    0.019
+    3   0.000    0.000    0.986    0.014
+    4   0.000    0.019    0.021    0.960
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3        4
+
+    1   0.965    0.035    0.000    0.000
+    2   0.016    0.957    0.000    0.026
+    3   0.000    0.000    0.984    0.016
+    4   0.000    0.014    0.018    0.968
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3        4
+
+    1     10.342    7.027   -3.438    0.000
+    2     -0.466    3.596  -10.175    0.000
+    3     -9.708   -9.708    4.091    0.000
+    4    -13.783   -4.241   -3.985    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    SELINST           -0.926      0.061    -15.115      0.000
+    SELCON            -1.014      0.069    -14.801      0.000
+    SELPER            -0.778      0.060    -12.892      0.000
+    SELROA             0.062      0.059      1.061      0.289
+    SELINT            -1.112      0.071    -15.612      0.000
+
+ Variances
+    SELINST            0.099      0.026      3.815      0.000
+    SELCON             0.133      0.032      4.095      0.000
+    SELPER             0.134      0.030      4.548      0.000
+    SELROA             0.125      0.026      4.849      0.000
+    SELINT             0.164      0.035      4.706      0.000
+
+Latent Class 2
+
+ Means
+    SELINST           -0.360      0.044     -8.149      0.000
+    SELCON            -0.397      0.048     -8.223      0.000
+    SELPER            -0.226      0.041     -5.531      0.000
+    SELROA            -0.316      0.064     -4.925      0.000
+    SELINT            -0.434      0.061     -7.081      0.000
+
+ Variances
+    SELINST            0.023      0.005      5.167      0.000
+    SELCON             0.021      0.004      5.189      0.000
+    SELPER             0.039      0.008      4.905      0.000
+    SELROA             0.159      0.059      2.684      0.007
+    SELINT             0.039      0.010      4.075      0.000
+
+Latent Class 3
+
+ Means
+    SELINST            0.613      0.030     20.254      0.000
+    SELCON             0.702      0.029     24.460      0.000
+    SELPER             0.458      0.040     11.542      0.000
+    SELROA             0.333      0.102      3.271      0.001
+    SELINT             0.783      0.030     26.056      0.000
+
+ Variances
+    SELINST            0.053      0.006      8.375      0.000
+    SELCON             0.046      0.006      7.709      0.000
+    SELPER             0.142      0.016      8.970      0.000
+    SELROA             1.129      0.102     11.065      0.000
+    SELINT             0.051      0.006      8.183      0.000
+
+Latent Class 4
+
+ Means
+    SELINST            0.122      0.036      3.400      0.001
+    SELCON             0.097      0.042      2.334      0.020
+    SELPER             0.117      0.045      2.585      0.010
+    SELROA            -0.230      0.097     -2.366      0.018
+    SELINT             0.088      0.047      1.889      0.059
+
+ Variances
+    SELINST            0.029      0.005      5.682      0.000
+    SELCON             0.028      0.005      5.613      0.000
+    SELPER             0.097      0.030      3.259      0.001
+    SELROA             0.596      0.083      7.182      0.000
+    SELINT             0.039      0.008      4.664      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1               -0.385      0.210     -1.832      0.067
+    C#2               -0.302      0.191     -1.584      0.113
+    C#3                0.234      0.168      1.392      0.164
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.103E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Means
+    SELINST           -2.939      0.331     -8.874      0.000
+    SELCON            -2.784      0.324     -8.588      0.000
+    SELPER            -2.123      0.180    -11.771      0.000
+    SELROA             0.176      0.157      1.123      0.261
+    SELINT            -2.744      0.284     -9.666      0.000
+
+ Variances
+    SELINST            1.000      0.000    999.000    999.000
+    SELCON             1.000      0.000    999.000    999.000
+    SELPER             1.000      0.000    999.000    999.000
+    SELROA             1.000      0.000    999.000    999.000
+    SELINT             1.000      0.000    999.000    999.000
+
+Latent Class 2
+
+ Means
+    SELINST           -2.354      0.406     -5.795      0.000
+    SELCON            -2.767      0.444     -6.231      0.000
+    SELPER            -1.144      0.175     -6.520      0.000
+    SELROA            -0.792      0.288     -2.753      0.006
+    SELINT            -2.192      0.320     -6.852      0.000
+
+ Variances
+    SELINST            1.000      0.000    999.000    999.000
+    SELCON             1.000      0.000    999.000    999.000
+    SELPER             1.000      0.000    999.000    999.000
+    SELROA             1.000      0.000    999.000    999.000
+    SELINT             1.000      0.000    999.000    999.000
+
+Latent Class 3
+
+ Means
+    SELINST            2.672      0.237     11.253      0.000
+    SELCON             3.275      0.270     12.147      0.000
+    SELPER             1.215      0.150      8.122      0.000
+    SELROA             0.314      0.106      2.959      0.003
+    SELINT             3.484      0.282     12.335      0.000
+
+ Variances
+    SELINST            1.000      0.000    999.000    999.000
+    SELCON             1.000      0.000    999.000    999.000
+    SELPER             1.000      0.000    999.000    999.000
+    SELROA             1.000      0.000    999.000    999.000
+    SELINT             1.000      0.000    999.000    999.000
+
+Latent Class 4
+
+ Means
+    SELINST            0.714      0.250      2.852      0.004
+    SELCON             0.584      0.238      2.448      0.014
+    SELPER             0.376      0.182      2.065      0.039
+    SELROA            -0.298      0.140     -2.123      0.034
+    SELINT             0.447      0.215      2.079      0.038
+
+ Variances
+    SELINST            1.000      0.000    999.000    999.000
+    SELCON             1.000      0.000    999.000    999.000
+    SELPER             1.000      0.000    999.000    999.000
+    SELROA             1.000      0.000    999.000    999.000
+    SELINT             1.000      0.000    999.000    999.000
+
+
+R-SQUARE
+
+Class 1
+
+Class 2
+
+Class 3
+
+Class 4
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                    1             2             3             4             5
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST            6
+ SELCON             0             7
+ SELPER             0             0             8
+ SELROA             0             0             0             9
+ SELINT             0             0             0             0            10
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                   11            12            13            14            15
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST           16
+ SELCON             0            17
+ SELPER             0             0            18
+ SELROA             0             0             0            19
+ SELINT             0             0             0             0            20
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 3
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                   21            22            23            24            25
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST           26
+ SELCON             0            27
+ SELPER             0             0            28
+ SELROA             0             0             0            29
+ SELINT             0             0             0             0            30
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 4
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                   31            32            33            34            35
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST           36
+ SELCON             0            37
+ SELPER             0             0            38
+ SELROA             0             0             0            39
+ SELINT             0             0             0             0            40
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+                   41            42            43             0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+               -0.605        -0.667        -0.553        -0.823        -0.738
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.183
+ SELCON         0.000         0.223
+ SELPER         0.000         0.000         0.153
+ SELROA         0.000         0.000         0.000         0.339
+ SELINT         0.000         0.000         0.000         0.000         0.272
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.183
+ SELCON         0.000         0.223
+ SELPER         0.000         0.000         0.153
+ SELROA         0.000         0.000         0.000         0.339
+ SELINT         0.000         0.000         0.000         0.000         0.272
+
+
+     STARTING VALUES FOR LATENT CLASS 3
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.183
+ SELCON         0.000         0.223
+ SELPER         0.000         0.000         0.153
+ SELROA         0.000         0.000         0.000         0.339
+ SELINT         0.000         0.000         0.000         0.000         0.272
+
+
+     STARTING VALUES FOR LATENT CLASS 4
+
+
+           NU
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                0.605         0.667         0.553         0.823         0.738
+
+
+           THETA
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.183
+ SELCON         0.000         0.223
+ SELPER         0.000         0.000         0.153
+ SELROA         0.000         0.000         0.000         0.339
+ SELINT         0.000         0.000         0.000         0.000         0.272
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+TECHNICAL 7 OUTPUT
+
+
+     SAMPLE STATISTICS WEIGHTED BY ESTIMATED CLASS PROBABILITIES FOR CLASS 1
+
+
+           Means
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+               -0.926        -1.014        -0.778         0.062        -1.112
+
+
+           Covariances
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.099
+ SELCON         0.104         0.133
+ SELPER         0.076         0.070         0.134
+ SELROA        -0.076        -0.092        -0.090         0.125
+ SELINT         0.101         0.137         0.077        -0.096         0.164
+
+
+     SAMPLE STATISTICS WEIGHTED BY ESTIMATED CLASS PROBABILITIES FOR CLASS 2
+
+
+           Means
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+               -0.360        -0.397        -0.226        -0.316        -0.434
+
+
+           Covariances
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.023
+ SELCON         0.013         0.021
+ SELPER         0.010         0.011         0.039
+ SELROA         0.002         0.001        -0.023         0.159
+ SELINT         0.009         0.021         0.016        -0.012         0.039
+
+
+     SAMPLE STATISTICS WEIGHTED BY ESTIMATED CLASS PROBABILITIES FOR CLASS 3
+
+
+           Means
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                0.613         0.702         0.458         0.333         0.783
+
+
+           Covariances
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.053
+ SELCON         0.035         0.046
+ SELPER         0.043         0.024         0.142
+ SELROA         0.006         0.042        -0.158         1.129
+ SELINT         0.035         0.042         0.031         0.068         0.051
+
+
+     SAMPLE STATISTICS WEIGHTED BY ESTIMATED CLASS PROBABILITIES FOR CLASS 4
+
+
+           Means
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+                0.122         0.097         0.117        -0.230         0.088
+
+
+           Covariances
+              SELINST       SELCON        SELPER        SELROA        SELINT
+              ________      ________      ________      ________      ________
+ SELINST        0.029
+ SELCON         0.017         0.028
+ SELPER         0.012         0.001         0.097
+ SELROA         0.021         0.039        -0.125         0.596
+ SELINT         0.014         0.022         0.010         0.033         0.039
+
+
+TECHNICAL 11 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                3000
+        Number of final stage optimizations                   100
+
+
+
+     VUONG-LO-MENDELL-RUBIN LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                         -906.775
+          2 Times the Loglikelihood Difference            347.819
+          Difference in the Number of Parameters               11
+          Mean                                             37.213
+          Standard Deviation                              186.495
+          P-Value                                          0.0422
+
+     LO-MENDELL-RUBIN ADJUSTED LRT TEST
+
+          Value                                           342.466
+          P-Value                                          0.0439
+
+
+TECHNICAL 14 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                3000
+        Number of final stage optimizations                   100
+
+     Random Starts Specification for the k-1 Class Model for Generated Data
+        Number of initial stage random starts                   0
+        Number of final stage optimizations for the
+           initial stage random starts                          0
+     Random Starts Specification for the k Class Model for Generated Data
+        Number of initial stage random starts                  40
+        Number of final stage optimizations                     8
+     Number of bootstrap draws requested                   Varies
+
+
+     PARAMETRIC BOOTSTRAPPED LIKELIHOOD RATIO TEST FOR 3 (H0) VERSUS 4 CLASSES
+
+          H0 Loglikelihood Value                         -906.775
+          2 Times the Loglikelihood Difference            347.819
+          Difference in the Number of Parameters               11
+          Approximate P-Value                              0.0000
+          Successful Bootstrap Draws                            5
+
+     WARNING:  OF THE 5 BOOTSTRAP DRAWS, 4 DRAWS HAD BOTH A SMALLER LRT VALUE THAN THE
+     OBSERVED LRT VALUE AND NOT A REPLICATED BEST LOGLIKELIHOOD VALUE FOR THE 4-CLASS MODEL.
+     THIS MEANS THAT THE P-VALUE MAY NOT BE TRUSTWORTHY DUE TO LOCAL MAXIMA.
+     INCREASE THE NUMBER OF RANDOM STARTS USING THE LRTSTARTS OPTION.
+
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  21:35:26
+        Ending Time:  21:36:05
+       Elapsed Time:  00:00:39
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen

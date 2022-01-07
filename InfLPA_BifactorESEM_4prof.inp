@@ -1,0 +1,62 @@
+TITLE:      InfLPA_BifacESEM_4prof; 
+DATA:       FILE IS Inf_BifactorESEM.dat;
+                Format = Free;
+VARIABLE:   NAMES ARE
+        InfCop4-InfCop10 
+        InfSym5-InfSym10 
+        InfIS1-InfIS10 
+        InfCon1-InfCon5 InfCon7 InfCon8
+        InfPer1-InfPer5 InfPer7-InfPer10
+        InfRoA1-InfRoA7
+        InfInt1-InfInt5
+        RANDOMID
+        G G_SE
+        INFCOP COP_SE
+        INFSYM SYMP_SE
+        INFIS INST_SE
+        INFCON CONS_SE
+        INFPER PERS_SE
+        INFROA ROAS_SE
+        INFINT INTG_SE;
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        G
+        INFCOP
+        INFSYM
+        INFIS
+        INFCON
+        INFPER
+        INFROA
+        INFINT;
+
+    	Classes = c (4) ;
+
+    Analysis:
+    	Type = Mixture ;
+    	Estimator = MLR ;
+    	Starts = 3000 100 ;
+
+    Model:
+        %OVERALL%
+    G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT;
+        [G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT];
+
+        %C#1%
+    G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT;
+        [G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT];
+
+        %C#2%
+    G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT;
+        [G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT];
+
+        %C#3%
+    G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT;
+        [G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT];
+
+        %C#4%
+    G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT;
+        [G INFCOP INFSYM INFIS INFCON INFPER INFROA INFINT];
+
+    Output: Sampstat Standardized stdyx TECH1 TECH7 TECH11 TECH14;

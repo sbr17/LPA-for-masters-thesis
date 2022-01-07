@@ -1,0 +1,37 @@
+TITLE:      Thesis_Ideal_1stOrdCFA; 
+DATA:       FILE IS IdealItems.txt;
+VARIABLE:   NAMES ARE
+        RandomID 
+     
+        PerCop1-PerCop10 
+        PerSym1-PerSym10 
+        PerIS1-PerIS10 
+        PerCon1-PerCon10
+        PerPer1-PerPer10
+        PerRoA1-PerRoA10
+        PerInt1-PerInt5; 
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        PerCop4-PerCop10 
+        PerSym5-PerSym10 
+        PerIS1-PerIS10 
+        PerCon1-PerCon5 PerCon7 PerCon8
+        PerPer1-PerPer5 PerPer7-PerPer10
+        PerRoA1-PerRoA7
+        PerInt1-PerInt5;
+
+Model:      Per_Coop BY PerCop4-PerCop10;
+            Per_Symp BY PerSym5-PerSym10;
+            Per_InSt BY PerIS1-PerIS10;
+            Per_Cons BY PerCon1-PerCon5 PerCon7 PerCon8;
+            Per_Pers BY PerPer1-PerPer5 PerPer7-PerPer10;
+            Per_RoAs BY PerRoA1-PerRoA7;
+            Per_Intg BY PerInt1-PerInt5;
+
+OUTPUT:     MODINDICES STAND;
+
+SAVEDATA:   File is Ideal_1stOrdCFA.dat;
+            Format is free;
+            Save = FSCORES;                      

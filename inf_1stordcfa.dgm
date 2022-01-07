@@ -1,0 +1,593 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+      Thesis_MostInfluential_1stOrdCFA;
+DATA:
+       FILE IS InfItems.txt;
+VARIABLE:
+   NAMES ARE
+        RandomID
+        InfCop1 InfCop2 InfCop3 InfCop4 InfCop5 InfCop6 InfCop7 InfCop8 InfCop9
+            InfCop10
+        InfSym1 InfSym2 InfSym3 InfSym4 InfSym5 InfSym6 InfSym7 InfSym8 InfSym9
+            InfSym10
+        InfIS1 InfIS2 InfIS3 InfIS4 InfIS5 InfIS6 InfIS7 InfIS8 InfIS9 InfIS10
+        InfCon1 InfCon2 InfCon3 InfCon4 InfCon5 InfCon6 InfCon7 InfCon8 InfCon9
+            InfCon10
+        InfPer1 InfPer2 InfPer3 InfPer4 InfPer5 InfPer6 InfPer7 InfPer8 InfPer9
+            InfPer10
+        InfRoA1 InfRoA2 InfRoA3 InfRoA4 InfRoA5 InfRoA6 InfRoA7 InfRoA8 InfRoA9
+            InfRoA10
+        InfInt1 InfInt2 InfInt3 InfInt4 InfInt5;
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are
+        RandomID
+        InfCop4-InfCop10
+        InfSym5-InfSym10
+        InfIS1-InfIS10
+        InfCon1-InfCon5 InfCon7 InfCon8
+        InfPer1-InfPer5 InfPer7-InfPer10
+        InfRoA1-InfRoA7
+        InfInt1-InfInt5;
+OUTPUT:
+     MODINDICES STAND;
+MODEL:
+      Inf_Coop BY InfCop4-InfCop10;
+            Inf_Symp BY InfSym5-InfSym10;
+            Inf_InSt BY InfIS1-InfIS10;
+            Inf_Cons BY InfCon1-InfCon5 InfCon7 InfCon8;
+            Inf_Pers BY InfPer1-InfPer5 InfPer7-InfPer10;
+            Inf_RoAs BY InfRoA1-InfRoA7;
+            Inf_Intg BY InfInt1-InfInt5;
+INPUT_END
+2
+2
+2
+2
+ML
+1
+GENERAL
+0
+51
+7
+0
+infcop4 infcop5 infcop6 infcop7 infcop8 infcop9 infcop10 infsym5 infsym6 infsym7 infsym8 infsym9 infsym10 infis1 infis2 infis3 infis4 infis5 infis6 infis7 infis8 infis9 infis10 infcon1 infcon2 infcon3 infcon4 infcon5 infcon7 infcon8 infper1 infper2 infper3 infper4 infper5 infper7 infper8 infper9 infper10 infroa1 infroa2 infroa3 infroa4 infroa5 infroa6 infroa7 infint1 infint2 infint3 infint4 infint5 inf_coop inf_symp inf_inst inf_cons inf_pers inf_roas inf_intg
+1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0
+0
+7
+inf_coop
+infcop4 infcop5 infcop6 infcop7 infcop8 infcop9 infcop10
+inf_symp
+infsym5 infsym6 infsym7 infsym8 infsym9 infsym10
+inf_inst
+infis1 infis2 infis3 infis4 infis5 infis6 infis7 infis8 infis9 infis10
+inf_cons
+infcon1 infcon2 infcon3 infcon4 infcon5 infcon7 infcon8
+inf_pers
+infper1 infper2 infper3 infper4 infper5 infper7 infper8 infper9 infper10
+inf_roas
+infroa1 infroa2 infroa3 infroa4 infroa5 infroa6 infroa7
+inf_intg
+infint1 infint2 infint3 infint4 infint5
+1 1 inf_coop infcop4    1.000    0.000
+1 1 inf_coop infcop5    1.355    0.186
+1 1 inf_coop infcop6    1.187    0.177
+1 1 inf_coop infcop7    1.964    0.247
+1 1 inf_coop infcop8    1.877    0.239
+1 1 inf_coop infcop9    1.854    0.236
+1 1 inf_coop infcop10    1.827    0.237
+1 1 inf_symp infsym5    1.000    0.000
+1 1 inf_symp infsym6    0.973    0.078
+1 1 inf_symp infsym7    0.850    0.078
+1 1 inf_symp infsym8    0.881    0.076
+1 1 inf_symp infsym9    0.676    0.073
+1 1 inf_symp infsym10    0.879    0.072
+1 1 inf_inst infis1    1.000    0.000
+1 1 inf_inst infis2    0.759    0.084
+1 1 inf_inst infis3    0.867    0.082
+1 1 inf_inst infis4    0.970    0.085
+1 1 inf_inst infis5    0.864    0.086
+1 1 inf_inst infis6    0.929    0.082
+1 1 inf_inst infis7    0.956    0.084
+1 1 inf_inst infis8    0.966    0.086
+1 1 inf_inst infis9    1.009    0.085
+1 1 inf_inst infis10    0.718    0.085
+1 1 inf_cons infcon1    1.000    0.000
+1 1 inf_cons infcon2    0.923    0.102
+1 1 inf_cons infcon3    0.944    0.091
+1 1 inf_cons infcon4    1.016    0.099
+1 1 inf_cons infcon5    1.082    0.104
+1 1 inf_cons infcon7    1.132    0.103
+1 1 inf_cons infcon8    1.181    0.105
+1 1 inf_pers infper1    1.000    0.000
+1 1 inf_pers infper2    1.223    0.145
+1 1 inf_pers infper3    1.323    0.152
+1 1 inf_pers infper4    1.386    0.154
+1 1 inf_pers infper5    1.346    0.152
+1 1 inf_pers infper7    1.077    0.131
+1 1 inf_pers infper8    1.217    0.144
+1 1 inf_pers infper9    1.083    0.133
+1 1 inf_pers infper10    1.320    0.150
+1 1 inf_roas infroa1    1.000    0.000
+1 1 inf_roas infroa2    1.249    0.099
+1 1 inf_roas infroa3    1.147    0.091
+1 1 inf_roas infroa4    1.171    0.094
+1 1 inf_roas infroa5    1.106    0.092
+1 1 inf_roas infroa6    1.215    0.095
+1 1 inf_roas infroa7    1.056    0.088
+1 1 inf_intg infint1    1.000    0.000
+1 1 inf_intg infint2    1.036    0.087
+1 1 inf_intg infint3    0.926    0.081
+1 1 inf_intg infint4    0.886    0.082
+1 1 inf_intg infint5    0.872    0.081
+2 1 inf_symp inf_coop    0.454    0.071
+2 1 inf_inst inf_coop    0.112    0.029
+2 1 inf_inst inf_symp    0.167    0.047
+2 1 inf_cons inf_coop    0.107    0.027
+2 1 inf_cons inf_symp    0.150    0.043
+2 1 inf_cons inf_inst    0.424    0.054
+2 1 inf_pers inf_coop    0.046    0.020
+2 1 inf_pers inf_symp    0.076    0.035
+2 1 inf_pers inf_inst    0.329    0.048
+2 1 inf_pers inf_cons    0.301    0.045
+2 1 inf_roas inf_coop    0.378    0.062
+2 1 inf_roas inf_symp    0.661    0.082
+2 1 inf_roas inf_inst    0.165    0.044
+2 1 inf_roas inf_cons    0.101    0.039
+2 1 inf_roas inf_pers    0.093    0.033
+2 1 inf_intg inf_coop    0.163    0.034
+2 1 inf_intg inf_symp    0.244    0.051
+2 1 inf_intg inf_inst    0.460    0.057
+2 1 inf_intg inf_cons    0.421    0.053
+2 1 inf_intg inf_pers    0.309    0.046
+2 1 inf_intg inf_roas    0.209    0.047
+4 1 infcop4    1.246    0.099
+4 1 infcop5    0.911    0.075
+4 1 infcop6    1.129    0.091
+4 1 infcop7    0.583    0.056
+4 1 infcop8    0.650    0.060
+4 1 infcop9    0.688    0.063
+4 1 infcop10    0.785    0.069
+4 1 infsym5    0.766    0.070
+4 1 infsym6    0.797    0.071
+4 1 infsym7    0.971    0.082
+4 1 infsym8    0.839    0.072
+4 1 infsym9    0.961    0.078
+4 1 infsym10    0.723    0.064
+4 1 infis1    0.631    0.053
+4 1 infis2    0.800    0.064
+4 1 infis3    0.648    0.054
+4 1 infis4    0.596    0.051
+4 1 infis5    0.733    0.060
+4 1 infis6    0.547    0.046
+4 1 infis7    0.574    0.049
+4 1 infis8    0.643    0.054
+4 1 infis9    0.539    0.047
+4 1 infis10    0.865    0.069
+4 1 infcon1    0.656    0.055
+4 1 infcon2    0.826    0.067
+4 1 infcon3    0.502    0.042
+4 1 infcon4    0.585    0.049
+4 1 infcon5    0.617    0.052
+4 1 infcon7    0.534    0.046
+4 1 infcon8    0.534    0.047
+4 1 infper1    0.859    0.069
+4 1 infper2    0.669    0.056
+4 1 infper3    0.659    0.056
+4 1 infper4    0.501    0.045
+4 1 infper5    0.537    0.047
+4 1 infper7    0.579    0.048
+4 1 infper8    0.622    0.052
+4 1 infper9    0.613    0.051
+4 1 infper10    0.577    0.050
+4 1 infroa1    0.988    0.083
+4 1 infroa2    0.879    0.079
+4 1 infroa3    0.753    0.068
+4 1 infroa4    0.789    0.071
+4 1 infroa5    0.845    0.074
+4 1 infroa6    0.732    0.067
+4 1 infroa7    0.811    0.070
+4 1 infint1    0.556    0.050
+4 1 infint2    0.522    0.048
+4 1 infint3    0.565    0.049
+4 1 infint4    0.597    0.051
+4 1 infint5    0.594    0.051
+5 1 inf_coop    0.297    0.074
+5 1 inf_symp    0.876    0.118
+5 1 inf_inst    0.545    0.080
+5 1 inf_cons    0.435    0.070
+5 1 inf_pers    0.309    0.064
+5 1 inf_roas    0.817    0.121
+5 1 inf_intg    0.548    0.078
+11 1 inf_coop infcop4    0.439    0.047
+11 1 inf_coop infcop5    0.612    0.037
+11 1 inf_coop infcop6    0.520    0.043
+11 1 inf_coop infcop7    0.814    0.022
+11 1 inf_coop infcop8    0.785    0.024
+11 1 inf_coop infcop9    0.773    0.025
+11 1 inf_coop infcop10    0.747    0.027
+11 1 inf_symp infsym5    0.730    0.030
+11 1 inf_symp infsym6    0.714    0.031
+11 1 inf_symp infsym7    0.628    0.037
+11 1 inf_symp infsym8    0.669    0.034
+11 1 inf_symp infsym9    0.542    0.042
+11 1 inf_symp infsym10    0.695    0.032
+11 1 inf_inst infis1    0.681    0.032
+11 1 inf_inst infis2    0.531    0.042
+11 1 inf_inst infis3    0.623    0.036
+11 1 inf_inst infis4    0.680    0.032
+11 1 inf_inst infis5    0.598    0.038
+11 1 inf_inst infis6    0.680    0.032
+11 1 inf_inst infis7    0.682    0.032
+11 1 inf_inst infis8    0.665    0.033
+11 1 inf_inst infis9    0.712    0.030
+11 1 inf_inst infis10    0.495    0.044
+11 1 inf_cons infcon1    0.631    0.036
+11 1 inf_cons infcon2    0.556    0.041
+11 1 inf_cons infcon3    0.660    0.034
+11 1 inf_cons infcon4    0.659    0.034
+11 1 inf_cons infcon5    0.672    0.033
+11 1 inf_cons infcon7    0.715    0.030
+11 1 inf_cons infcon8    0.729    0.029
+11 1 inf_pers infper1    0.515    0.043
+11 1 inf_pers infper2    0.639    0.036
+11 1 inf_pers infper3    0.672    0.034
+11 1 inf_pers infper4    0.736    0.029
+11 1 inf_pers infper5    0.714    0.030
+11 1 inf_pers infper7    0.618    0.037
+11 1 inf_pers infper8    0.651    0.035
+11 1 inf_pers infper9    0.610    0.038
+11 1 inf_pers infper10    0.695    0.032
+11 1 inf_roas infroa1    0.673    0.033
+11 1 inf_roas infroa2    0.769    0.025
+11 1 inf_roas infroa3    0.767    0.026
+11 1 inf_roas infroa4    0.766    0.026
+11 1 inf_roas infroa5    0.736    0.028
+11 1 inf_roas infroa6    0.789    0.024
+11 1 inf_roas infroa7    0.727    0.029
+11 1 inf_intg infint1    0.704    0.032
+11 1 inf_intg infint2    0.728    0.031
+11 1 inf_intg infint3    0.674    0.034
+11 1 inf_intg infint4    0.647    0.036
+11 1 inf_intg infint5    0.642    0.036
+12 1 inf_symp inf_coop    0.890    0.023
+12 1 inf_inst inf_coop    0.277    0.058
+12 1 inf_inst inf_symp    0.242    0.061
+12 1 inf_cons inf_coop    0.299    0.058
+12 1 inf_cons inf_symp    0.243    0.062
+12 1 inf_cons inf_inst    0.871    0.023
+12 1 inf_pers inf_coop    0.153    0.061
+12 1 inf_pers inf_symp    0.146    0.063
+12 1 inf_pers inf_inst    0.802    0.028
+12 1 inf_pers inf_cons    0.821    0.028
+12 1 inf_roas inf_coop    0.768    0.030
+12 1 inf_roas inf_symp    0.782    0.031
+12 1 inf_roas inf_inst    0.247    0.058
+12 1 inf_roas inf_cons    0.169    0.061
+12 1 inf_roas inf_pers    0.185    0.060
+12 1 inf_intg inf_coop    0.405    0.056
+12 1 inf_intg inf_symp    0.352    0.060
+12 1 inf_intg inf_inst    0.842    0.028
+12 1 inf_intg inf_cons    0.861    0.027
+12 1 inf_intg inf_pers    0.750    0.035
+12 1 inf_intg inf_roas    0.313    0.059
+14 1 infcop4    0.808    0.041
+14 1 infcop5    0.626    0.045
+14 1 infcop6    0.730    0.044
+14 1 infcop7    0.338    0.036
+14 1 infcop8    0.384    0.038
+14 1 infcop9    0.403    0.039
+14 1 infcop10    0.442    0.041
+14 1 infsym5    0.467    0.043
+14 1 infsym6    0.490    0.044
+14 1 infsym7    0.606    0.046
+14 1 infsym8    0.553    0.046
+14 1 infsym9    0.706    0.046
+14 1 infsym10    0.516    0.045
+14 1 infis1    0.536    0.044
+14 1 infis2    0.718    0.045
+14 1 infis3    0.612    0.045
+14 1 infis4    0.537    0.044
+14 1 infis5    0.643    0.045
+14 1 infis6    0.537    0.044
+14 1 infis7    0.535    0.044
+14 1 infis8    0.558    0.044
+14 1 infis9    0.493    0.043
+14 1 infis10    0.755    0.044
+14 1 infcon1    0.601    0.046
+14 1 infcon2    0.690    0.045
+14 1 infcon3    0.565    0.045
+14 1 infcon4    0.566    0.045
+14 1 infcon5    0.548    0.045
+14 1 infcon7    0.489    0.043
+14 1 infcon8    0.468    0.042
+14 1 infper1    0.735    0.045
+14 1 infper2    0.591    0.045
+14 1 infper3    0.549    0.045
+14 1 infper4    0.458    0.043
+14 1 infper5    0.490    0.043
+14 1 infper7    0.618    0.046
+14 1 infper8    0.576    0.045
+14 1 infper9    0.628    0.046
+14 1 infper10    0.517    0.044
+14 1 infroa1    0.547    0.044
+14 1 infroa2    0.408    0.039
+14 1 infroa3    0.412    0.039
+14 1 infroa4    0.413    0.039
+14 1 infroa5    0.458    0.041
+14 1 infroa6    0.378    0.038
+14 1 infroa7    0.471    0.042
+14 1 infint1    0.504    0.045
+14 1 infint2    0.470    0.045
+14 1 infint3    0.546    0.046
+14 1 infint4    0.581    0.047
+14 1 infint5    0.588    0.047
+15 1 inf_coop    1.000    0.000
+15 1 inf_symp    1.000    0.000
+15 1 inf_inst    1.000    0.000
+15 1 inf_cons    1.000    0.000
+15 1 inf_pers    1.000    0.000
+15 1 inf_roas    1.000    0.000
+15 1 inf_intg    1.000    0.000
+21 1 inf_coop infcop4    0.439    0.047
+21 1 inf_coop infcop5    0.612    0.037
+21 1 inf_coop infcop6    0.520    0.043
+21 1 inf_coop infcop7    0.814    0.022
+21 1 inf_coop infcop8    0.785    0.024
+21 1 inf_coop infcop9    0.773    0.025
+21 1 inf_coop infcop10    0.747    0.027
+21 1 inf_symp infsym5    0.730    0.030
+21 1 inf_symp infsym6    0.714    0.031
+21 1 inf_symp infsym7    0.628    0.037
+21 1 inf_symp infsym8    0.669    0.034
+21 1 inf_symp infsym9    0.542    0.042
+21 1 inf_symp infsym10    0.695    0.032
+21 1 inf_inst infis1    0.681    0.032
+21 1 inf_inst infis2    0.531    0.042
+21 1 inf_inst infis3    0.623    0.036
+21 1 inf_inst infis4    0.680    0.032
+21 1 inf_inst infis5    0.598    0.038
+21 1 inf_inst infis6    0.680    0.032
+21 1 inf_inst infis7    0.682    0.032
+21 1 inf_inst infis8    0.665    0.033
+21 1 inf_inst infis9    0.712    0.030
+21 1 inf_inst infis10    0.495    0.044
+21 1 inf_cons infcon1    0.631    0.036
+21 1 inf_cons infcon2    0.556    0.041
+21 1 inf_cons infcon3    0.660    0.034
+21 1 inf_cons infcon4    0.659    0.034
+21 1 inf_cons infcon5    0.672    0.033
+21 1 inf_cons infcon7    0.715    0.030
+21 1 inf_cons infcon8    0.729    0.029
+21 1 inf_pers infper1    0.515    0.043
+21 1 inf_pers infper2    0.639    0.036
+21 1 inf_pers infper3    0.672    0.034
+21 1 inf_pers infper4    0.736    0.029
+21 1 inf_pers infper5    0.714    0.030
+21 1 inf_pers infper7    0.618    0.037
+21 1 inf_pers infper8    0.651    0.035
+21 1 inf_pers infper9    0.610    0.038
+21 1 inf_pers infper10    0.695    0.032
+21 1 inf_roas infroa1    0.673    0.033
+21 1 inf_roas infroa2    0.769    0.025
+21 1 inf_roas infroa3    0.767    0.026
+21 1 inf_roas infroa4    0.766    0.026
+21 1 inf_roas infroa5    0.736    0.028
+21 1 inf_roas infroa6    0.789    0.024
+21 1 inf_roas infroa7    0.727    0.029
+21 1 inf_intg infint1    0.704    0.032
+21 1 inf_intg infint2    0.728    0.031
+21 1 inf_intg infint3    0.674    0.034
+21 1 inf_intg infint4    0.647    0.036
+21 1 inf_intg infint5    0.642    0.036
+22 1 inf_symp inf_coop    0.890    0.023
+22 1 inf_inst inf_coop    0.277    0.058
+22 1 inf_inst inf_symp    0.242    0.061
+22 1 inf_cons inf_coop    0.299    0.058
+22 1 inf_cons inf_symp    0.243    0.062
+22 1 inf_cons inf_inst    0.871    0.023
+22 1 inf_pers inf_coop    0.153    0.061
+22 1 inf_pers inf_symp    0.146    0.063
+22 1 inf_pers inf_inst    0.802    0.028
+22 1 inf_pers inf_cons    0.821    0.028
+22 1 inf_roas inf_coop    0.768    0.030
+22 1 inf_roas inf_symp    0.782    0.031
+22 1 inf_roas inf_inst    0.247    0.058
+22 1 inf_roas inf_cons    0.169    0.061
+22 1 inf_roas inf_pers    0.185    0.060
+22 1 inf_intg inf_coop    0.405    0.056
+22 1 inf_intg inf_symp    0.352    0.060
+22 1 inf_intg inf_inst    0.842    0.028
+22 1 inf_intg inf_cons    0.861    0.027
+22 1 inf_intg inf_pers    0.750    0.035
+22 1 inf_intg inf_roas    0.313    0.059
+24 1 infcop4    0.808    0.041
+24 1 infcop5    0.626    0.045
+24 1 infcop6    0.730    0.044
+24 1 infcop7    0.338    0.036
+24 1 infcop8    0.384    0.038
+24 1 infcop9    0.403    0.039
+24 1 infcop10    0.442    0.041
+24 1 infsym5    0.467    0.043
+24 1 infsym6    0.490    0.044
+24 1 infsym7    0.606    0.046
+24 1 infsym8    0.553    0.046
+24 1 infsym9    0.706    0.046
+24 1 infsym10    0.516    0.045
+24 1 infis1    0.536    0.044
+24 1 infis2    0.718    0.045
+24 1 infis3    0.612    0.045
+24 1 infis4    0.537    0.044
+24 1 infis5    0.643    0.045
+24 1 infis6    0.537    0.044
+24 1 infis7    0.535    0.044
+24 1 infis8    0.558    0.044
+24 1 infis9    0.493    0.043
+24 1 infis10    0.755    0.044
+24 1 infcon1    0.601    0.046
+24 1 infcon2    0.690    0.045
+24 1 infcon3    0.565    0.045
+24 1 infcon4    0.566    0.045
+24 1 infcon5    0.548    0.045
+24 1 infcon7    0.489    0.043
+24 1 infcon8    0.468    0.042
+24 1 infper1    0.735    0.045
+24 1 infper2    0.591    0.045
+24 1 infper3    0.549    0.045
+24 1 infper4    0.458    0.043
+24 1 infper5    0.490    0.043
+24 1 infper7    0.618    0.046
+24 1 infper8    0.576    0.045
+24 1 infper9    0.628    0.046
+24 1 infper10    0.517    0.044
+24 1 infroa1    0.547    0.044
+24 1 infroa2    0.408    0.039
+24 1 infroa3    0.412    0.039
+24 1 infroa4    0.413    0.039
+24 1 infroa5    0.458    0.041
+24 1 infroa6    0.378    0.038
+24 1 infroa7    0.471    0.042
+24 1 infint1    0.504    0.045
+24 1 infint2    0.470    0.045
+24 1 infint3    0.546    0.046
+24 1 infint4    0.581    0.047
+24 1 infint5    0.588    0.047
+25 1 inf_coop    1.000    0.000
+25 1 inf_symp    1.000    0.000
+25 1 inf_inst    1.000    0.000
+25 1 inf_cons    1.000    0.000
+25 1 inf_pers    1.000    0.000
+25 1 inf_roas    1.000    0.000
+25 1 inf_intg    1.000    0.000
+31 1 inf_coop infcop4    0.545    0.068
+31 1 inf_coop infcop5    0.738    0.062
+31 1 inf_coop infcop6    0.647    0.066
+31 1 inf_coop infcop7    1.070    0.061
+31 1 inf_coop infcop8    1.022    0.061
+31 1 inf_coop infcop9    1.010    0.062
+31 1 inf_coop infcop10    0.996    0.064
+31 1 inf_symp infsym5    0.936    0.063
+31 1 inf_symp infsym6    0.911    0.063
+31 1 inf_symp infsym7    0.795    0.065
+31 1 inf_symp infsym8    0.825    0.062
+31 1 inf_symp infsym9    0.633    0.062
+31 1 inf_symp infsym10    0.823    0.059
+31 1 inf_inst infis1    0.739    0.054
+31 1 inf_inst infis2    0.561    0.056
+31 1 inf_inst infis3    0.641    0.053
+31 1 inf_inst infis4    0.716    0.052
+31 1 inf_inst infis5    0.638    0.055
+31 1 inf_inst infis6    0.686    0.050
+31 1 inf_inst infis7    0.706    0.051
+31 1 inf_inst infis8    0.713    0.054
+31 1 inf_inst infis9    0.745    0.051
+31 1 inf_inst infis10    0.530    0.057
+31 1 inf_cons infcon1    0.660    0.053
+31 1 inf_cons infcon2    0.609    0.057
+31 1 inf_cons infcon3    0.622    0.048
+31 1 inf_cons infcon4    0.670    0.051
+31 1 inf_cons infcon5    0.714    0.053
+31 1 inf_cons infcon7    0.746    0.051
+31 1 inf_cons infcon8    0.779    0.052
+31 1 inf_pers infper1    0.556    0.058
+31 1 inf_pers infper2    0.680    0.054
+31 1 inf_pers infper3    0.736    0.055
+31 1 inf_pers infper4    0.771    0.051
+31 1 inf_pers infper5    0.748    0.052
+31 1 inf_pers infper7    0.599    0.050
+31 1 inf_pers infper8    0.677    0.053
+31 1 inf_pers infper9    0.602    0.051
+31 1 inf_pers infper10    0.734    0.053
+31 1 inf_roas infroa1    0.904    0.067
+31 1 inf_roas infroa2    1.129    0.070
+31 1 inf_roas infroa3    1.037    0.064
+31 1 inf_roas infroa4    1.059    0.066
+31 1 inf_roas infroa5    0.999    0.066
+31 1 inf_roas infroa6    1.098    0.065
+31 1 inf_roas infroa7    0.955    0.064
+31 1 inf_intg infint1    0.740    0.053
+31 1 inf_intg infint2    0.767    0.052
+31 1 inf_intg infint3    0.685    0.052
+31 1 inf_intg infint4    0.656    0.052
+31 1 inf_intg infint5    0.646    0.052
+32 1 inf_symp inf_coop    0.890    0.023
+32 1 inf_inst inf_coop    0.277    0.058
+32 1 inf_inst inf_symp    0.242    0.061
+32 1 inf_cons inf_coop    0.299    0.058
+32 1 inf_cons inf_symp    0.243    0.062
+32 1 inf_cons inf_inst    0.871    0.023
+32 1 inf_pers inf_coop    0.153    0.061
+32 1 inf_pers inf_symp    0.146    0.063
+32 1 inf_pers inf_inst    0.802    0.028
+32 1 inf_pers inf_cons    0.821    0.028
+32 1 inf_roas inf_coop    0.768    0.030
+32 1 inf_roas inf_symp    0.782    0.031
+32 1 inf_roas inf_inst    0.247    0.058
+32 1 inf_roas inf_cons    0.169    0.061
+32 1 inf_roas inf_pers    0.185    0.060
+32 1 inf_intg inf_coop    0.405    0.056
+32 1 inf_intg inf_symp    0.352    0.060
+32 1 inf_intg inf_inst    0.842    0.028
+32 1 inf_intg inf_cons    0.861    0.027
+32 1 inf_intg inf_pers    0.750    0.035
+32 1 inf_intg inf_roas    0.313    0.059
+34 1 infcop4    1.246    0.099
+34 1 infcop5    0.911    0.075
+34 1 infcop6    1.129    0.091
+34 1 infcop7    0.583    0.056
+34 1 infcop8    0.650    0.060
+34 1 infcop9    0.688    0.063
+34 1 infcop10    0.785    0.069
+34 1 infsym5    0.766    0.070
+34 1 infsym6    0.797    0.071
+34 1 infsym7    0.971    0.082
+34 1 infsym8    0.839    0.072
+34 1 infsym9    0.961    0.078
+34 1 infsym10    0.723    0.064
+34 1 infis1    0.631    0.053
+34 1 infis2    0.800    0.064
+34 1 infis3    0.648    0.054
+34 1 infis4    0.596    0.051
+34 1 infis5    0.733    0.060
+34 1 infis6    0.547    0.046
+34 1 infis7    0.574    0.049
+34 1 infis8    0.643    0.054
+34 1 infis9    0.539    0.047
+34 1 infis10    0.865    0.069
+34 1 infcon1    0.656    0.055
+34 1 infcon2    0.826    0.067
+34 1 infcon3    0.502    0.042
+34 1 infcon4    0.585    0.049
+34 1 infcon5    0.617    0.052
+34 1 infcon7    0.534    0.046
+34 1 infcon8    0.534    0.047
+34 1 infper1    0.859    0.069
+34 1 infper2    0.669    0.056
+34 1 infper3    0.659    0.056
+34 1 infper4    0.501    0.045
+34 1 infper5    0.537    0.047
+34 1 infper7    0.579    0.048
+34 1 infper8    0.622    0.052
+34 1 infper9    0.613    0.051
+34 1 infper10    0.577    0.050
+34 1 infroa1    0.988    0.083
+34 1 infroa2    0.879    0.079
+34 1 infroa3    0.753    0.068
+34 1 infroa4    0.789    0.071
+34 1 infroa5    0.845    0.074
+34 1 infroa6    0.732    0.067
+34 1 infroa7    0.811    0.070
+34 1 infint1    0.556    0.050
+34 1 infint2    0.522    0.048
+34 1 infint3    0.565    0.049
+34 1 infint4    0.597    0.051
+34 1 infint5    0.594    0.051
+35 1 inf_coop    1.000    0.000
+35 1 inf_symp    1.000    0.000
+35 1 inf_inst    1.000    0.000
+35 1 inf_cons    1.000    0.000
+35 1 inf_pers    1.000    0.000
+35 1 inf_roas    1.000    0.000
+35 1 inf_intg    1.000    0.000

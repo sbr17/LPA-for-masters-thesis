@@ -1,0 +1,38 @@
+TITLE:      Thesis_1stOrder_CFA; 
+DATA:       FILE IS "Self Indicators Only.txt";
+VARIABLE:   NAMES ARE
+        RandomID 
+
+        SelCop1-SelCop10 
+        SelSym1-SelSym10 
+        SelIS1-SelIS10 
+        SelCon1-SelCon10
+        SelPer1-SelPer10
+        SelRoA1-SelRoA10
+        SelInt1-SelInt5;
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        SelCop4-SelCop10 
+        SelSym5-SelSym10 
+        SelIS1-SelIS10 
+        SelCon1-SelCon5 SelCon7 SelCon8
+        SelPer1-SelPer5 SelPer7-SelPer10
+        SelRoA1-SelRoA7
+        SelInt1-SelInt5;
+
+Model:      Sel_Coop BY SelCop4-SelCop10;
+            Sel_Symp BY SelSym5-SelSym10;
+            Sel_InSt BY SelIS1-SelIS10;
+            Sel_Cons BY SelCon1-SelCon5 SelCon7 SelCon8;
+            Sel_Pers BY SelPer1-SelPer5 SelPer7-SelPer10;
+            Sel_RoAs BY SelRoA1-SelRoA7;
+            Sel_Intg BY SelInt1-SelInt5;
+
+OUTPUT:     MODINDICES STAND;
+
+SAVEDATA:   File is 1stOrdCFA.dat;
+            Format is free;
+            Save = FSCORES;
+                      

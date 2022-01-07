@@ -1,0 +1,42 @@
+TITLE:      Thesis_MostInfluential_1stOrdCFA; 
+DATA:       FILE IS InfItems.txt;
+VARIABLE:   NAMES ARE
+        RandomID 
+
+        InfCop1 InfCop2 InfCop3 InfCop4 InfCop5 InfCop6 InfCop7 InfCop8 InfCop9 
+            InfCop10 
+        InfSym1 InfSym2 InfSym3 InfSym4 InfSym5 InfSym6 InfSym7 InfSym8 InfSym9 
+            InfSym10 
+        InfIS1 InfIS2 InfIS3 InfIS4 InfIS5 InfIS6 InfIS7 InfIS8 InfIS9 InfIS10 
+        InfCon1 InfCon2 InfCon3 InfCon4 InfCon5 InfCon6 InfCon7 InfCon8 InfCon9 
+            InfCon10
+        InfPer1 InfPer2 InfPer3 InfPer4 InfPer5 InfPer6 InfPer7 InfPer8 InfPer9
+            InfPer10
+        InfRoA1 InfRoA2 InfRoA3 InfRoA4 InfRoA5 InfRoA6 InfRoA7 InfRoA8 InfRoA9
+            InfRoA10
+        InfInt1 InfInt2 InfInt3 InfInt4 InfInt5;
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        RandomID 
+        
+        InfCop4-InfCop10 
+        InfSym5-InfSym10 
+        InfIS1-InfIS10 
+        InfCon1-InfCon5 InfCon7 InfCon8
+        InfPer1-InfPer5 InfPer7-InfPer10
+        InfRoA1-InfRoA7
+        InfInt1-InfInt5;
+
+Model:      Inf_Coop BY InfCop4-InfCop10;
+            Inf_Symp BY InfSym5-InfSym10;
+            Inf_InSt BY InfIS1-InfIS10;
+            Inf_Cons BY InfCon1-InfCon5 InfCon7 InfCon8;
+            Inf_Pers BY InfPer1-InfPer5 InfPer7-InfPer10;
+            Inf_RoAs BY InfRoA1-InfRoA7;
+            Inf_Intg BY InfInt1-InfInt5;
+
+OUTPUT:     MODINDICES STAND;
+
+                      

@@ -1,0 +1,127 @@
+TITLE:      Thesis_1stOrder_ESEM; 
+DATA:       FILE IS "Self Indicators Only.txt";
+VARIABLE:   NAMES ARE
+        RandomID 
+
+        SelCop1-SelCop10 
+        SelSym1-SelSym10 
+        SelIS1-SelIS10 
+        SelCon1-SelCon10
+        SelPer1-SelPer10
+        SelRoA1-SelRoA10
+        SelInt1-SelInt5;
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        SelCop4-SelCop10 
+        SelSym5-SelSym10 
+        SelIS1-SelIS10 
+        SelCon1-SelCon5 SelCon7 SelCon8
+        SelPer1-SelPer5 SelPer7-SelPer10
+        SelRoA1-SelRoA7
+        SelInt1-SelInt5;
+
+Analysis:   ESTIMATOR = MLR ;
+    	    Rotation = Target ;
+
+
+Model:   Sel_Coop BY SelCop4-SelCop10
+              SelSym5~0 SelSym6~0 
+                    SelSym7~0 SelSym8~0 SelSym9~0 SelSym10~0
+              SelIS1~0 SelIS2~0 SelIS3~0 SelIS4~0 SelIS5~0 SelIS6~0 SelIS7~0 
+                    SelIS8~0 SelIS9~0 SelIS10~0
+              SelCon1~0 SelCon2~0 SelCon3~0 SelCon4~0 SelCon5~0 
+                    SelCon7~0 SelCon8~0
+              SelPer1~0 SelPer2~0 SelPer3~0 SelPer4~0 SelPer5~0
+                    SelPer7~0 SelPer8~0 SelPer9~0 SelPer10~0
+                SelRoA1~0 SelRoA2~0 SelRoA3~0 SelRoA4~0 SelRoA5~0 SelRoA6~0
+                    SelRoA7~0
+                SelInt1~0 SelInt2~0 SelInt3~0 SelInt4~0 SelInt5~0 (*1);
+
+            Sel_Symp BY SelSym5-SelSym10
+              SelCop4~0 SelCop5~0 SelCop6~0 
+                    SelCop7~0 SelCop8~0 SelCop9~0 SelCop10~0
+              SelIS1~0 SelIS2~0 SelIS3~0 SelIS4~0 SelIS5~0 SelIS6~0 SelIS7~0 
+                    SelIS8~0 SelIS9~0 SelIS10~0
+              SelCon1~0 SelCon2~0 SelCon3~0 SelCon4~0 SelCon5~0 
+                    SelCon7~0 SelCon8~0
+              SelPer1~0 SelPer2~0 SelPer3~0 SelPer4~0 SelPer5~0
+                    SelPer7~0 SelPer8~0 SelPer9~0 SelPer10~0
+                SelRoA1~0 SelRoA2~0 SelRoA3~0 SelRoA4~0 SelRoA5~0 SelRoA6~0
+                    SelRoA7~0
+                SelInt1~0 SelInt2~0 SelInt3~0 SelInt4~0 SelInt5~0 (*1);
+
+            Sel_InSt BY SelIS1-SelIS10
+              SelCop4~0 SelCop5~0 SelCop6~0 
+                    SelCop7~0 SelCop8~0 SelCop9~0 SelCop10~0
+              SelSym5~0 SelSym6~0 
+                    SelSym7~0 SelSym8~0 SelSym9~0 SelSym10~0
+              SelCon1~0 SelCon2~0 SelCon3~0 SelCon4~0 SelCon5~0 
+                    SelCon7~0 SelCon8~0
+              SelPer1~0 SelPer2~0 SelPer3~0 SelPer4~0 SelPer5~0
+                    SelPer7~0 SelPer8~0 SelPer9~0 SelPer10~0
+                SelRoA1~0 SelRoA2~0 SelRoA3~0 SelRoA4~0 SelRoA5~0 SelRoA6~0
+                    SelRoA7~0
+                SelInt1~0 SelInt2~0 SelInt3~0 SelInt4~0 SelInt5~0 (*1);
+
+            Sel_Cons BY SelCon1-SelCon5 SelCon7 SelCon8
+              SelCop4~0 SelCop5~0 SelCop6~0 
+                    SelCop7~0 SelCop8~0 SelCop9~0 SelCop10~0
+              SelSym5~0 SelSym6~0 
+                    SelSym7~0 SelSym8~0 SelSym9~0 SelSym10~0
+              SelIS1~0 SelIS2~0 SelIS3~0 SelIS4~0 SelIS5~0 SelIS6~0 SelIS7~0 
+                    SelIS8~0 SelIS9~0 SelIS10~0
+              SelPer1~0 SelPer2~0 SelPer3~0 SelPer4~0 SelPer5~0
+                    SelPer7~0 SelPer8~0 SelPer9~0 SelPer10~0
+                SelRoA1~0 SelRoA2~0 SelRoA3~0 SelRoA4~0 SelRoA5~0 SelRoA6~0
+                    SelRoA7~0
+                SelInt1~0 SelInt2~0 SelInt3~0 SelInt4~0 SelInt5~0 (*1);
+
+            Sel_Pers BY SelPer1-SelPer5 SelPer7-SelPer10
+              SelCop4~0 SelCop5~0 SelCop6~0 
+                    SelCop7~0 SelCop8~0 SelCop9~0 SelCop10~0
+              SelSym5~0 SelSym6~0 
+                    SelSym7~0 SelSym8~0 SelSym9~0 SelSym10~0
+              SelIS1~0 SelIS2~0 SelIS3~0 SelIS4~0 SelIS5~0 SelIS6~0 SelIS7~0 
+                    SelIS8~0 SelIS9~0 SelIS10~0
+              SelCon1~0 SelCon2~0 SelCon3~0 SelCon4~0 SelCon5~0 
+                    SelCon7~0 SelCon8~0
+                SelRoA1~0 SelRoA2~0 SelRoA3~0 SelRoA4~0 SelRoA5~0 SelRoA6~0
+                    SelRoA7~0
+                SelInt1~0 SelInt2~0 SelInt3~0 SelInt4~0 SelInt5~0 (*1);
+
+            Sel_RoAs BY SelRoA1-SelRoA7
+              SelCop4~0 SelCop5~0 SelCop6~0 
+                    SelCop7~0 SelCop8~0 SelCop9~0 SelCop10~0
+              SelSym5~0 SelSym6~0 
+                    SelSym7~0 SelSym8~0 SelSym9~0 SelSym10~0
+              SelIS1~0 SelIS2~0 SelIS3~0 SelIS4~0 SelIS5~0 SelIS6~0 SelIS7~0 
+                    SelIS8~0 SelIS9~0 SelIS10~0
+              SelCon1~0 SelCon2~0 SelCon3~0 SelCon4~0 SelCon5~0 
+                    SelCon7~0 SelCon8~0
+              SelPer1~0 SelPer2~0 SelPer3~0 SelPer4~0 SelPer5~0
+                    SelPer7~0 SelPer8~0 SelPer9~0 SelPer10~0
+              SelInt1~0 SelInt2~0 SelInt3~0 SelInt4~0 SelInt5~0 (*1);
+
+            Sel_Intg BY SelInt1-SelInt5
+              SelCop4~0 SelCop5~0 SelCop6~0 
+                    SelCop7~0 SelCop8~0 SelCop9~0 SelCop10~0
+              SelSym5~0 SelSym6~0 
+                    SelSym7~0 SelSym8~0 SelSym9~0 SelSym10~0
+              SelIS1~0 SelIS2~0 SelIS3~0 SelIS4~0 SelIS5~0 SelIS6~0 SelIS7~0 
+                    SelIS8~0 SelIS9~0 SelIS10~0
+              SelCon1~0 SelCon2~0 SelCon3~0 SelCon4~0 SelCon5~0 
+                    SelCon7~0 SelCon8~0
+              SelPer1~0 SelPer2~0 SelPer3~0 SelPer4~0 SelPer5~0
+                    SelPer7~0 SelPer8~0 SelPer9~0 SelPer10~0
+                SelRoA1~0 SelRoA2~0 SelRoA3~0 SelRoA4~0 SelRoA5~0 SelRoA6~0
+                    SelRoA7~0 (*1);
+
+OUTPUT:     MODINDICES STAND;
+
+SAVEDATA:   File is 1stOrdESEM.dat;
+            Format is free;
+            Save = FSCORES;
+
+                      

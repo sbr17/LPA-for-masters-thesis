@@ -1,0 +1,60 @@
+TITLE:      IdealLPA_1stOrdESEM_4prof; 
+DATA:       FILE IS Ideal_1stOrdESEM.dat;
+                Format = Free;
+VARIABLE:   NAMES ARE
+        PerCop1-PerCop10 
+        PerSym1-PerSym10 
+        PerIS1-PerIS10 
+        PerCon1-PerCon10
+        PerPer1-PerPer10
+        PerRoA1-PerRoA10
+        PerInt1-PerInt5
+        RANDOMID
+        PerCOP COP_SE
+        PerSYM SYMP_SE
+        PerIS INST_SE
+        PerCON CONS_SE
+        PerPER PERS_SE
+        PerROA ROAS_SE
+        PerINT INTG_SE;
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        PerCOP
+        PerSYM
+        PerIS
+        PerCON
+        PerPER
+        PerROA
+        PerINT;
+
+    	Classes = c (4) ;
+
+    Analysis:
+    	Type = Mixture ;
+    	Estimator = MLR ;
+    	Starts = 3000 100 ;
+
+    Model:
+        %OVERALL%
+    PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT;
+        [PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT];
+
+        %C#1%
+    PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT;
+        [PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT];
+
+        %C#2%
+    PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT;
+        [PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT];
+
+        %C#3%
+    PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT;
+        [PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT];
+
+        %C#4%
+    PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT;
+        [PerCOP PerSYM PerIS PerCON PerPER PerROA PerINT];
+
+    Output: Sampstat Standardized stdyx TECH1 TECH7 TECH11 TECH14;

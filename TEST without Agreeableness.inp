@@ -1,0 +1,60 @@
+Title: LPA Model 2 (4 profile) with free means and variance for Self Profile
+
+    Data: File is 1stOrdCFA.dat;
+    	  Format = Free;
+    	
+Variable: Names ARE
+        SelCop4-SelCop10 
+        SelSym5-SelSym10 
+        SelIS1-SelIS10 
+        SelCon1-SelCon5 SelCon7 SelCon8
+        SelPer1-SelPer5 SelPer7-SelPer10
+        SelRoA1-SelRoA7
+        SelInt1-SelInt5
+        RandomID
+        SelCop Coop_SE
+        SelSym Symp_SE
+        SelInSt InSt_SE
+        SelCon Cons_SE
+        SelPer Pers_SE
+        SelRoA RoAs_SE
+        SelInt Intg_SE;
+
+IDvariable = RandomID;
+Missing are all (-99);
+Usevariables are
+        SelInSt
+        SelCon
+        SelPer
+        SelRoA
+        SelInt;
+    	
+    	Classes = c (4) ;
+
+    Analysis:
+    	Type = Mixture ;
+    	Estimator = MLR ;
+    	Starts = 3000 100 ;
+
+    Model:
+    	%OVERALL%
+    SelInSt SelCon SelPer SelRoA SelInt;
+    	[SelInSt SelCon SelPer SelRoA SelInt];
+    	
+    	%C#1%
+    SelInSt SelCon SelPer SelRoA SelInt;
+    	[SelInSt SelCon SelPer SelRoA SelInt];
+
+    	%C#2%
+    SelInSt SelCon SelPer SelRoA SelInt;
+    	[SelInSt SelCon SelPer SelRoA SelInt];
+
+    	%C#3%
+    SelInSt SelCon SelPer SelRoA SelInt;
+    	[SelInSt SelCon SelPer SelRoA SelInt];
+
+        %C#4%
+    SelInSt SelCon SelPer SelRoA SelInt;
+    	[SelInSt SelCon SelPer SelRoA SelInt];
+
+    Output: Sampstat Standardized stdyx TECH1 TECH7 TECH11 TECH14;

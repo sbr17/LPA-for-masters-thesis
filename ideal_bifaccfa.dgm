@@ -1,0 +1,836 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+      Thesis_Ideal_BifacCFA;
+DATA:
+       FILE IS IdealItems.txt;
+VARIABLE:
+   NAMES ARE
+        RandomID
+        PerCop1-PerCop10
+        PerSym1-PerSym10
+        PerIS1-PerIS10
+        PerCon1-PerCon10
+        PerPer1-PerPer10
+        PerRoA1-PerRoA10
+        PerInt1-PerInt5;
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are
+        PerCop4-PerCop10
+        PerSym5-PerSym10
+        PerIS1-PerIS10
+        PerCon1-PerCon5 PerCon7 PerCon8
+        PerPer1-PerPer5 PerPer7-PerPer10
+        PerRoA1-PerRoA7
+        PerInt1-PerInt5;
+OUTPUT:
+     MODINDICES STAND;
+SAVEDATA:
+   File is Ideal_1stOrdCFA.dat;
+            Format is free;
+            Save = FSCORES;
+MODEL:
+      G BY PerCop4-PerCop10
+        PerSym5-PerSym10
+        PerIS1-PerIS10
+        PerCon1-PerCon5 PerCon7 PerCon8
+        PerPer1-PerPer5 PerPer7-PerPer10
+        PerRoA1-PerRoA7
+        PerInt1-PerInt5;
+            Per_Coop BY PerCop4-PerCop10;
+            Per_Symp BY PerSym5-PerSym10;
+            Per_InSt BY PerIS1-PerIS10;
+            Per_Cons BY PerCon1-PerCon5 PerCon7 PerCon8;
+            Per_Pers BY PerPer1-PerPer5 PerPer7-PerPer10;
+            Per_RoAs BY PerRoA1-PerRoA7;
+            Per_Intg BY PerInt1-PerInt5;
+INPUT_END
+1
+1
+1
+1
+ML
+1
+GENERAL
+0
+51
+8
+0
+percop4 percop5 percop6 percop7 percop8 percop9 percop10 persym5 persym6 persym7 persym8 persym9 persym10 peris1 peris2 peris3 peris4 peris5 peris6 peris7 peris8 peris9 peris10 percon1 percon2 percon3 percon4 percon5 percon7 percon8 perper1 perper2 perper3 perper4 perper5 perper7 perper8 perper9 perper10 perroa1 perroa2 perroa3 perroa4 perroa5 perroa6 perroa7 perint1 perint2 perint3 perint4 perint5 g per_coop per_symp per_inst per_cons per_pers per_roas per_intg
+1
+-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0
+0
+8
+g
+percop4 percop5 percop6 percop7 percop8 percop9 percop10 persym5 persym6 persym7 persym8 persym9 persym10 peris1 peris2 peris3 peris4 peris5 peris6 peris7 peris8 peris9 peris10 percon1 percon2 percon3 percon4 percon5 percon7 percon8 perper1 perper2 perper3 perper4 perper5 perper7 perper8 perper9 perper10 perroa1 perroa2 perroa3 perroa4 perroa5 perroa6 perroa7 perint1 perint2 perint3 perint4 perint5
+per_coop
+percop4 percop5 percop6 percop7 percop8 percop9 percop10
+per_symp
+persym5 persym6 persym7 persym8 persym9 persym10
+per_inst
+peris1 peris2 peris3 peris4 peris5 peris6 peris7 peris8 peris9 peris10
+per_cons
+percon1 percon2 percon3 percon4 percon5 percon7 percon8
+per_pers
+perper1 perper2 perper3 perper4 perper5 perper7 perper8 perper9 perper10
+per_roas
+perroa1 perroa2 perroa3 perroa4 perroa5 perroa6 perroa7
+per_intg
+perint1 perint2 perint3 perint4 perint5
+1 1 g percop4    1.000
+1 1 g percop5    1.451
+1 1 g percop6    1.226
+1 1 g percop7    1.951
+1 1 g percop8    1.711
+1 1 g percop9    1.781
+1 1 g percop10    1.697
+1 1 g persym5    1.060
+1 1 g persym6    1.072
+1 1 g persym7    1.104
+1 1 g persym8    1.124
+1 1 g persym9    0.880
+1 1 g persym10    1.080
+1 1 g peris1    1.017
+1 1 g peris2    0.620
+1 1 g peris3    1.071
+1 1 g peris4    1.094
+1 1 g peris5    0.926
+1 1 g peris6    1.110
+1 1 g peris7    1.034
+1 1 g peris8    1.248
+1 1 g peris9    1.112
+1 1 g peris10    0.857
+1 1 g percon1    1.153
+1 1 g percon2    0.859
+1 1 g percon3    0.957
+1 1 g percon4    0.943
+1 1 g percon5    0.936
+1 1 g percon7    0.936
+1 1 g percon8    0.809
+1 1 g perper1    1.040
+1 1 g perper2    0.963
+1 1 g perper3    0.531
+1 1 g perper4    0.908
+1 1 g perper5    0.676
+1 1 g perper7    0.989
+1 1 g perper8    1.115
+1 1 g perper9    0.844
+1 1 g perper10    1.241
+1 1 g perroa1    0.760
+1 1 g perroa2    1.339
+1 1 g perroa3    0.992
+1 1 g perroa4    1.266
+1 1 g perroa5    1.061
+1 1 g perroa6    0.937
+1 1 g perroa7    0.851
+1 1 g perint1    1.135
+1 1 g perint2    1.128
+1 1 g perint3    1.124
+1 1 g perint4    0.916
+1 1 g perint5    1.014
+1 1 per_coop percop4    1.000
+1 1 per_coop percop5    1.331
+1 1 per_coop percop6    1.037
+1 1 per_coop percop7    1.674
+1 1 per_coop percop8    1.747
+1 1 per_coop percop9    1.727
+1 1 per_coop percop10    1.455
+1 1 per_symp persym5    1.000
+1 1 per_symp persym6    1.265
+1 1 per_symp persym7    1.149
+1 1 per_symp persym8    0.989
+1 1 per_symp persym9    0.793
+1 1 per_symp persym10    0.986
+1 1 per_inst peris1    1.000
+1 1 per_inst peris2    0.878
+1 1 per_inst peris3    1.119
+1 1 per_inst peris4    1.128
+1 1 per_inst peris5    1.013
+1 1 per_inst peris6    1.154
+1 1 per_inst peris7    1.066
+1 1 per_inst peris8    1.108
+1 1 per_inst peris9    1.231
+1 1 per_inst peris10    0.998
+1 1 per_cons percon1    1.000
+1 1 per_cons percon2    1.065
+1 1 per_cons percon3    1.014
+1 1 per_cons percon4    0.909
+1 1 per_cons percon5    1.052
+1 1 per_cons percon7    1.123
+1 1 per_cons percon8    1.056
+1 1 per_pers perper1    1.000
+1 1 per_pers perper2    1.019
+1 1 per_pers perper3    0.967
+1 1 per_pers perper4    1.153
+1 1 per_pers perper5    0.941
+1 1 per_pers perper7    1.131
+1 1 per_pers perper8    1.201
+1 1 per_pers perper9    1.026
+1 1 per_pers perper10    1.132
+1 1 per_roas perroa1    1.000
+1 1 per_roas perroa2    0.963
+1 1 per_roas perroa3    0.958
+1 1 per_roas perroa4    1.071
+1 1 per_roas perroa5    1.064
+1 1 per_roas perroa6    1.181
+1 1 per_roas perroa7    0.832
+1 1 per_intg perint1    1.000
+1 1 per_intg perint2    0.983
+1 1 per_intg perint3    0.919
+1 1 per_intg perint4    0.938
+1 1 per_intg perint5    0.897
+2 1 per_coop g    0.433
+2 1 per_symp g    0.515
+2 1 per_symp per_coop   -0.296
+2 1 per_inst g    0.239
+2 1 per_inst per_coop   -0.386
+2 1 per_inst per_symp   -0.440
+2 1 per_cons g    0.272
+2 1 per_cons per_coop   -0.369
+2 1 per_cons per_symp   -0.401
+2 1 per_cons per_inst    0.056
+2 1 per_pers g    0.095
+2 1 per_pers per_coop   -0.268
+2 1 per_pers per_symp   -0.318
+2 1 per_pers per_inst    0.171
+2 1 per_pers per_cons    0.165
+2 1 per_roas g    0.510
+2 1 per_roas per_coop   -0.199
+2 1 per_roas per_symp   -0.080
+2 1 per_roas per_inst   -0.349
+2 1 per_roas per_cons   -0.347
+2 1 per_roas per_pers   -0.280
+2 1 per_intg g    0.365
+2 1 per_intg per_coop   -0.501
+2 1 per_intg per_symp   -0.542
+2 1 per_intg per_inst   -0.002
+2 1 per_intg per_cons   -0.001
+2 1 per_intg per_pers    0.161
+2 1 per_intg per_roas   -0.464
+4 1 percop4    1.189
+4 1 percop5    0.743
+4 1 percop6    1.112
+4 1 percop7    0.618
+4 1 percop8    0.809
+4 1 percop9    0.786
+4 1 percop10    0.733
+4 1 persym5    0.794
+4 1 persym6    0.680
+4 1 persym7    0.831
+4 1 persym8    0.905
+4 1 persym9    0.865
+4 1 persym10    0.835
+4 1 peris1    0.666
+4 1 peris2    0.950
+4 1 peris3    0.549
+4 1 peris4    0.560
+4 1 peris5    0.635
+4 1 peris6    0.471
+4 1 peris7    0.498
+4 1 peris8    0.587
+4 1 peris9    0.514
+4 1 peris10    0.753
+4 1 percon1    0.542
+4 1 percon2    0.680
+4 1 percon3    0.437
+4 1 percon4    0.746
+4 1 percon5    0.446
+4 1 percon7    0.577
+4 1 percon8    0.495
+4 1 perper1    0.835
+4 1 perper2    0.792
+4 1 perper3    0.788
+4 1 perper4    0.659
+4 1 perper5    0.667
+4 1 perper7    0.613
+4 1 perper8    0.701
+4 1 perper9    0.602
+4 1 perper10    0.623
+4 1 perroa1    0.954
+4 1 perroa2    0.795
+4 1 perroa3    0.681
+4 1 perroa4    0.532
+4 1 perroa5    0.679
+4 1 perroa6    0.555
+4 1 perroa7    0.830
+4 1 perint1    0.464
+4 1 perint2    0.461
+4 1 perint3    0.440
+4 1 perint4    0.519
+4 1 perint5    0.640
+5 1 g   -0.138
+5 1 per_coop   -0.360
+5 1 per_symp   -0.149
+5 1 per_inst    0.075
+5 1 per_cons    0.067
+5 1 per_pers    0.373
+5 1 per_roas    0.306
+5 1 per_intg   -0.036
+11 1 g percop4  999.000
+11 1 g percop5  999.000
+11 1 g percop6  999.000
+11 1 g percop7  999.000
+11 1 g percop8  999.000
+11 1 g percop9  999.000
+11 1 g percop10  999.000
+11 1 g persym5  999.000
+11 1 g persym6  999.000
+11 1 g persym7  999.000
+11 1 g persym8  999.000
+11 1 g persym9  999.000
+11 1 g persym10  999.000
+11 1 g peris1  999.000
+11 1 g peris2  999.000
+11 1 g peris3  999.000
+11 1 g peris4  999.000
+11 1 g peris5  999.000
+11 1 g peris6  999.000
+11 1 g peris7  999.000
+11 1 g peris8  999.000
+11 1 g peris9  999.000
+11 1 g peris10  999.000
+11 1 g percon1  999.000
+11 1 g percon2  999.000
+11 1 g percon3  999.000
+11 1 g percon4  999.000
+11 1 g percon5  999.000
+11 1 g percon7  999.000
+11 1 g percon8  999.000
+11 1 g perper1  999.000
+11 1 g perper2  999.000
+11 1 g perper3  999.000
+11 1 g perper4  999.000
+11 1 g perper5  999.000
+11 1 g perper7  999.000
+11 1 g perper8  999.000
+11 1 g perper9  999.000
+11 1 g perper10  999.000
+11 1 g perroa1  999.000
+11 1 g perroa2  999.000
+11 1 g perroa3  999.000
+11 1 g perroa4  999.000
+11 1 g perroa5  999.000
+11 1 g perroa6  999.000
+11 1 g perroa7  999.000
+11 1 g perint1  999.000
+11 1 g perint2  999.000
+11 1 g perint3  999.000
+11 1 g perint4  999.000
+11 1 g perint5  999.000
+11 1 per_coop percop4  999.000
+11 1 per_coop percop5  999.000
+11 1 per_coop percop6  999.000
+11 1 per_coop percop7  999.000
+11 1 per_coop percop8  999.000
+11 1 per_coop percop9  999.000
+11 1 per_coop percop10  999.000
+11 1 per_symp persym5  999.000
+11 1 per_symp persym6  999.000
+11 1 per_symp persym7  999.000
+11 1 per_symp persym8  999.000
+11 1 per_symp persym9  999.000
+11 1 per_symp persym10  999.000
+11 1 per_inst peris1    0.263
+11 1 per_inst peris2    0.219
+11 1 per_inst peris3    0.298
+11 1 per_inst peris4    0.297
+11 1 per_inst peris5    0.272
+11 1 per_inst peris6    0.314
+11 1 per_inst peris7    0.298
+11 1 per_inst peris8    0.286
+11 1 per_inst peris9    0.320
+11 1 per_inst peris10    0.257
+11 1 per_cons percon1    0.251
+11 1 per_cons percon2    0.256
+11 1 per_cons percon3    0.275
+11 1 per_cons percon4    0.219
+11 1 per_cons percon5    0.281
+11 1 per_cons percon7    0.275
+11 1 per_cons percon8    0.280
+11 1 per_pers perper1    0.545
+11 1 per_pers perper2    0.559
+11 1 per_pers perper3    0.540
+11 1 per_pers perper4    0.633
+11 1 per_pers perper5    0.560
+11 1 per_pers perper7    0.639
+11 1 per_pers perper8    0.638
+11 1 per_pers perper9    0.609
+11 1 per_pers perper10    0.643
+11 1 per_roas perroa1    0.396
+11 1 per_roas perroa2    0.364
+11 1 per_roas perroa3    0.395
+11 1 per_roas perroa4    0.414
+11 1 per_roas perroa5    0.414
+11 1 per_roas perroa6    0.463
+11 1 per_roas perroa7    0.357
+11 1 per_intg perint1  999.000
+11 1 per_intg perint2  999.000
+11 1 per_intg perint3  999.000
+11 1 per_intg perint4  999.000
+11 1 per_intg perint5  999.000
+12 1 per_coop g  999.000
+12 1 per_symp g  999.000
+12 1 per_symp per_coop  999.000
+12 1 per_inst g  999.000
+12 1 per_inst per_coop  999.000
+12 1 per_inst per_symp  999.000
+12 1 per_cons g  999.000
+12 1 per_cons per_coop  999.000
+12 1 per_cons per_symp  999.000
+12 1 per_cons per_inst    0.786
+12 1 per_pers g  999.000
+12 1 per_pers per_coop  999.000
+12 1 per_pers per_symp  999.000
+12 1 per_pers per_inst    1.020
+12 1 per_pers per_cons    1.046
+12 1 per_roas g  999.000
+12 1 per_roas per_coop  999.000
+12 1 per_roas per_symp  999.000
+12 1 per_roas per_inst   -2.300
+12 1 per_roas per_cons   -2.434
+12 1 per_roas per_pers   -0.829
+12 1 per_intg g  999.000
+12 1 per_intg per_coop  999.000
+12 1 per_intg per_symp  999.000
+12 1 per_intg per_inst  999.000
+12 1 per_intg per_cons  999.000
+12 1 per_intg per_pers  999.000
+12 1 per_intg per_roas  999.000
+14 1 percop4    0.763
+14 1 percop5    0.499
+14 1 percop6    0.686
+14 1 percop7    0.322
+14 1 percop8    0.426
+14 1 percop9    0.405
+14 1 percop10    0.428
+14 1 persym5    0.502
+14 1 persym6    0.404
+14 1 persym7    0.468
+14 1 persym8    0.523
+14 1 persym9    0.625
+14 1 persym10    0.514
+14 1 peris1    0.614
+14 1 peris2    0.781
+14 1 peris3    0.518
+14 1 peris4    0.518
+14 1 peris5    0.609
+14 1 peris6    0.464
+14 1 peris7    0.517
+14 1 peris8    0.521
+14 1 peris9    0.462
+14 1 peris10    0.663
+14 1 percon1    0.515
+14 1 percon2    0.590
+14 1 percon3    0.481
+14 1 percon4    0.651
+14 1 percon5    0.477
+14 1 percon7    0.519
+14 1 percon8    0.524
+14 1 perper1    0.664
+14 1 perper2    0.640
+14 1 perper3    0.659
+14 1 perper4    0.531
+14 1 perper5    0.632
+14 1 perper7    0.525
+14 1 perper8    0.530
+14 1 perper9    0.567
+14 1 perper10    0.539
+14 1 perroa1    0.488
+14 1 perroa2    0.370
+14 1 perroa3    0.379
+14 1 perroa4    0.260
+14 1 perroa5    0.335
+14 1 perroa6    0.279
+14 1 perroa7    0.498
+14 1 perint1    0.430
+14 1 perint2    0.435
+14 1 perint3    0.445
+14 1 perint4    0.520
+14 1 perint5    0.565
+15 1 g  999.000
+15 1 per_coop  999.000
+15 1 per_symp  999.000
+15 1 per_inst    1.000
+15 1 per_cons    1.000
+15 1 per_pers    1.000
+15 1 per_roas    1.000
+15 1 per_intg  999.000
+21 1 g percop4  999.000
+21 1 g percop5  999.000
+21 1 g percop6  999.000
+21 1 g percop7  999.000
+21 1 g percop8  999.000
+21 1 g percop9  999.000
+21 1 g percop10  999.000
+21 1 g persym5  999.000
+21 1 g persym6  999.000
+21 1 g persym7  999.000
+21 1 g persym8  999.000
+21 1 g persym9  999.000
+21 1 g persym10  999.000
+21 1 g peris1  999.000
+21 1 g peris2  999.000
+21 1 g peris3  999.000
+21 1 g peris4  999.000
+21 1 g peris5  999.000
+21 1 g peris6  999.000
+21 1 g peris7  999.000
+21 1 g peris8  999.000
+21 1 g peris9  999.000
+21 1 g peris10  999.000
+21 1 g percon1  999.000
+21 1 g percon2  999.000
+21 1 g percon3  999.000
+21 1 g percon4  999.000
+21 1 g percon5  999.000
+21 1 g percon7  999.000
+21 1 g percon8  999.000
+21 1 g perper1  999.000
+21 1 g perper2  999.000
+21 1 g perper3  999.000
+21 1 g perper4  999.000
+21 1 g perper5  999.000
+21 1 g perper7  999.000
+21 1 g perper8  999.000
+21 1 g perper9  999.000
+21 1 g perper10  999.000
+21 1 g perroa1  999.000
+21 1 g perroa2  999.000
+21 1 g perroa3  999.000
+21 1 g perroa4  999.000
+21 1 g perroa5  999.000
+21 1 g perroa6  999.000
+21 1 g perroa7  999.000
+21 1 g perint1  999.000
+21 1 g perint2  999.000
+21 1 g perint3  999.000
+21 1 g perint4  999.000
+21 1 g perint5  999.000
+21 1 per_coop percop4  999.000
+21 1 per_coop percop5  999.000
+21 1 per_coop percop6  999.000
+21 1 per_coop percop7  999.000
+21 1 per_coop percop8  999.000
+21 1 per_coop percop9  999.000
+21 1 per_coop percop10  999.000
+21 1 per_symp persym5  999.000
+21 1 per_symp persym6  999.000
+21 1 per_symp persym7  999.000
+21 1 per_symp persym8  999.000
+21 1 per_symp persym9  999.000
+21 1 per_symp persym10  999.000
+21 1 per_inst peris1    0.263
+21 1 per_inst peris2    0.219
+21 1 per_inst peris3    0.298
+21 1 per_inst peris4    0.297
+21 1 per_inst peris5    0.272
+21 1 per_inst peris6    0.314
+21 1 per_inst peris7    0.298
+21 1 per_inst peris8    0.286
+21 1 per_inst peris9    0.320
+21 1 per_inst peris10    0.257
+21 1 per_cons percon1    0.251
+21 1 per_cons percon2    0.256
+21 1 per_cons percon3    0.275
+21 1 per_cons percon4    0.219
+21 1 per_cons percon5    0.281
+21 1 per_cons percon7    0.275
+21 1 per_cons percon8    0.280
+21 1 per_pers perper1    0.545
+21 1 per_pers perper2    0.559
+21 1 per_pers perper3    0.540
+21 1 per_pers perper4    0.633
+21 1 per_pers perper5    0.560
+21 1 per_pers perper7    0.639
+21 1 per_pers perper8    0.638
+21 1 per_pers perper9    0.609
+21 1 per_pers perper10    0.643
+21 1 per_roas perroa1    0.396
+21 1 per_roas perroa2    0.364
+21 1 per_roas perroa3    0.395
+21 1 per_roas perroa4    0.414
+21 1 per_roas perroa5    0.414
+21 1 per_roas perroa6    0.463
+21 1 per_roas perroa7    0.357
+21 1 per_intg perint1  999.000
+21 1 per_intg perint2  999.000
+21 1 per_intg perint3  999.000
+21 1 per_intg perint4  999.000
+21 1 per_intg perint5  999.000
+22 1 per_coop g  999.000
+22 1 per_symp g  999.000
+22 1 per_symp per_coop  999.000
+22 1 per_inst g  999.000
+22 1 per_inst per_coop  999.000
+22 1 per_inst per_symp  999.000
+22 1 per_cons g  999.000
+22 1 per_cons per_coop  999.000
+22 1 per_cons per_symp  999.000
+22 1 per_cons per_inst    0.786
+22 1 per_pers g  999.000
+22 1 per_pers per_coop  999.000
+22 1 per_pers per_symp  999.000
+22 1 per_pers per_inst    1.020
+22 1 per_pers per_cons    1.046
+22 1 per_roas g  999.000
+22 1 per_roas per_coop  999.000
+22 1 per_roas per_symp  999.000
+22 1 per_roas per_inst   -2.300
+22 1 per_roas per_cons   -2.434
+22 1 per_roas per_pers   -0.829
+22 1 per_intg g  999.000
+22 1 per_intg per_coop  999.000
+22 1 per_intg per_symp  999.000
+22 1 per_intg per_inst  999.000
+22 1 per_intg per_cons  999.000
+22 1 per_intg per_pers  999.000
+22 1 per_intg per_roas  999.000
+24 1 percop4    0.763
+24 1 percop5    0.499
+24 1 percop6    0.686
+24 1 percop7    0.322
+24 1 percop8    0.426
+24 1 percop9    0.405
+24 1 percop10    0.428
+24 1 persym5    0.502
+24 1 persym6    0.404
+24 1 persym7    0.468
+24 1 persym8    0.523
+24 1 persym9    0.625
+24 1 persym10    0.514
+24 1 peris1    0.614
+24 1 peris2    0.781
+24 1 peris3    0.518
+24 1 peris4    0.518
+24 1 peris5    0.609
+24 1 peris6    0.464
+24 1 peris7    0.517
+24 1 peris8    0.521
+24 1 peris9    0.462
+24 1 peris10    0.663
+24 1 percon1    0.515
+24 1 percon2    0.590
+24 1 percon3    0.481
+24 1 percon4    0.651
+24 1 percon5    0.477
+24 1 percon7    0.519
+24 1 percon8    0.524
+24 1 perper1    0.664
+24 1 perper2    0.640
+24 1 perper3    0.659
+24 1 perper4    0.531
+24 1 perper5    0.632
+24 1 perper7    0.525
+24 1 perper8    0.530
+24 1 perper9    0.567
+24 1 perper10    0.539
+24 1 perroa1    0.488
+24 1 perroa2    0.370
+24 1 perroa3    0.379
+24 1 perroa4    0.260
+24 1 perroa5    0.335
+24 1 perroa6    0.279
+24 1 perroa7    0.498
+24 1 perint1    0.430
+24 1 perint2    0.435
+24 1 perint3    0.445
+24 1 perint4    0.520
+24 1 perint5    0.565
+25 1 g  999.000
+25 1 per_coop  999.000
+25 1 per_symp  999.000
+25 1 per_inst    1.000
+25 1 per_cons    1.000
+25 1 per_pers    1.000
+25 1 per_roas    1.000
+25 1 per_intg  999.000
+31 1 g percop4  999.000
+31 1 g percop5  999.000
+31 1 g percop6  999.000
+31 1 g percop7  999.000
+31 1 g percop8  999.000
+31 1 g percop9  999.000
+31 1 g percop10  999.000
+31 1 g persym5  999.000
+31 1 g persym6  999.000
+31 1 g persym7  999.000
+31 1 g persym8  999.000
+31 1 g persym9  999.000
+31 1 g persym10  999.000
+31 1 g peris1  999.000
+31 1 g peris2  999.000
+31 1 g peris3  999.000
+31 1 g peris4  999.000
+31 1 g peris5  999.000
+31 1 g peris6  999.000
+31 1 g peris7  999.000
+31 1 g peris8  999.000
+31 1 g peris9  999.000
+31 1 g peris10  999.000
+31 1 g percon1  999.000
+31 1 g percon2  999.000
+31 1 g percon3  999.000
+31 1 g percon4  999.000
+31 1 g percon5  999.000
+31 1 g percon7  999.000
+31 1 g percon8  999.000
+31 1 g perper1  999.000
+31 1 g perper2  999.000
+31 1 g perper3  999.000
+31 1 g perper4  999.000
+31 1 g perper5  999.000
+31 1 g perper7  999.000
+31 1 g perper8  999.000
+31 1 g perper9  999.000
+31 1 g perper10  999.000
+31 1 g perroa1  999.000
+31 1 g perroa2  999.000
+31 1 g perroa3  999.000
+31 1 g perroa4  999.000
+31 1 g perroa5  999.000
+31 1 g perroa6  999.000
+31 1 g perroa7  999.000
+31 1 g perint1  999.000
+31 1 g perint2  999.000
+31 1 g perint3  999.000
+31 1 g perint4  999.000
+31 1 g perint5  999.000
+31 1 per_coop percop4  999.000
+31 1 per_coop percop5  999.000
+31 1 per_coop percop6  999.000
+31 1 per_coop percop7  999.000
+31 1 per_coop percop8  999.000
+31 1 per_coop percop9  999.000
+31 1 per_coop percop10  999.000
+31 1 per_symp persym5  999.000
+31 1 per_symp persym6  999.000
+31 1 per_symp persym7  999.000
+31 1 per_symp persym8  999.000
+31 1 per_symp persym9  999.000
+31 1 per_symp persym10  999.000
+31 1 per_inst peris1    0.274
+31 1 per_inst peris2    0.241
+31 1 per_inst peris3    0.307
+31 1 per_inst peris4    0.309
+31 1 per_inst peris5    0.278
+31 1 per_inst peris6    0.317
+31 1 per_inst peris7    0.292
+31 1 per_inst peris8    0.304
+31 1 per_inst peris9    0.338
+31 1 per_inst peris10    0.274
+31 1 per_cons percon1    0.258
+31 1 per_cons percon2    0.275
+31 1 per_cons percon3    0.262
+31 1 per_cons percon4    0.235
+31 1 per_cons percon5    0.271
+31 1 per_cons percon7    0.290
+31 1 per_cons percon8    0.272
+31 1 per_pers perper1    0.611
+31 1 per_pers perper2    0.622
+31 1 per_pers perper3    0.591
+31 1 per_pers perper4    0.705
+31 1 per_pers perper5    0.575
+31 1 per_pers perper7    0.691
+31 1 per_pers perper8    0.734
+31 1 per_pers perper9    0.627
+31 1 per_pers perper10    0.692
+31 1 per_roas perroa1    0.553
+31 1 per_roas perroa2    0.533
+31 1 per_roas perroa3    0.530
+31 1 per_roas perroa4    0.593
+31 1 per_roas perroa5    0.589
+31 1 per_roas perroa6    0.653
+31 1 per_roas perroa7    0.460
+31 1 per_intg perint1  999.000
+31 1 per_intg perint2  999.000
+31 1 per_intg perint3  999.000
+31 1 per_intg perint4  999.000
+31 1 per_intg perint5  999.000
+32 1 per_coop g  999.000
+32 1 per_symp g  999.000
+32 1 per_symp per_coop  999.000
+32 1 per_inst g  999.000
+32 1 per_inst per_coop  999.000
+32 1 per_inst per_symp  999.000
+32 1 per_cons g  999.000
+32 1 per_cons per_coop  999.000
+32 1 per_cons per_symp  999.000
+32 1 per_cons per_inst    0.786
+32 1 per_pers g  999.000
+32 1 per_pers per_coop  999.000
+32 1 per_pers per_symp  999.000
+32 1 per_pers per_inst    1.020
+32 1 per_pers per_cons    1.046
+32 1 per_roas g  999.000
+32 1 per_roas per_coop  999.000
+32 1 per_roas per_symp  999.000
+32 1 per_roas per_inst   -2.300
+32 1 per_roas per_cons   -2.434
+32 1 per_roas per_pers   -0.829
+32 1 per_intg g  999.000
+32 1 per_intg per_coop  999.000
+32 1 per_intg per_symp  999.000
+32 1 per_intg per_inst  999.000
+32 1 per_intg per_cons  999.000
+32 1 per_intg per_pers  999.000
+32 1 per_intg per_roas  999.000
+34 1 percop4    1.189
+34 1 percop5    0.743
+34 1 percop6    1.112
+34 1 percop7    0.618
+34 1 percop8    0.809
+34 1 percop9    0.786
+34 1 percop10    0.733
+34 1 persym5    0.794
+34 1 persym6    0.680
+34 1 persym7    0.831
+34 1 persym8    0.905
+34 1 persym9    0.865
+34 1 persym10    0.835
+34 1 peris1    0.666
+34 1 peris2    0.950
+34 1 peris3    0.549
+34 1 peris4    0.560
+34 1 peris5    0.635
+34 1 peris6    0.471
+34 1 peris7    0.498
+34 1 peris8    0.587
+34 1 peris9    0.514
+34 1 peris10    0.753
+34 1 percon1    0.542
+34 1 percon2    0.680
+34 1 percon3    0.437
+34 1 percon4    0.746
+34 1 percon5    0.446
+34 1 percon7    0.577
+34 1 percon8    0.495
+34 1 perper1    0.835
+34 1 perper2    0.792
+34 1 perper3    0.788
+34 1 perper4    0.659
+34 1 perper5    0.667
+34 1 perper7    0.613
+34 1 perper8    0.701
+34 1 perper9    0.602
+34 1 perper10    0.623
+34 1 perroa1    0.954
+34 1 perroa2    0.795
+34 1 perroa3    0.681
+34 1 perroa4    0.532
+34 1 perroa5    0.679
+34 1 perroa6    0.555
+34 1 perroa7    0.830
+34 1 perint1    0.464
+34 1 perint2    0.461
+34 1 perint3    0.440
+34 1 perint4    0.519
+34 1 perint5    0.640
+35 1 g  999.000
+35 1 per_coop  999.000
+35 1 per_symp  999.000
+35 1 per_inst    1.000
+35 1 per_cons    1.000
+35 1 per_pers    1.000
+35 1 per_roas    1.000
+35 1 per_intg  999.000

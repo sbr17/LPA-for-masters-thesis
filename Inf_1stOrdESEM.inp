@@ -1,0 +1,134 @@
+TITLE:      Thesis_MostInf_1stOrdESEM; 
+DATA:       FILE IS InfItems.txt;
+                Format = Free;
+VARIABLE:   NAMES ARE
+        RandomID       
+     
+        InfCop1 InfCop2 InfCop3 InfCop4 InfCop5 InfCop6 InfCop7 InfCop8 InfCop9 
+            InfCop10 
+        InfSym1 InfSym2 InfSym3 InfSym4 InfSym5 InfSym6 InfSym7 InfSym8 InfSym9 
+            InfSym10 
+        InfIS1 InfIS2 InfIS3 InfIS4 InfIS5 InfIS6 InfIS7 InfIS8 InfIS9 InfIS10 
+        InfCon1 InfCon2 InfCon3 InfCon4 InfCon5 InfCon6 InfCon7 InfCon8 InfCon9 
+            InfCon10
+        InfPer1 InfPer2 InfPer3 InfPer4 InfPer5 InfPer6 InfPer7 InfPer8 InfPer9
+            InfPer10
+        InfRoA1 InfRoA2 InfRoA3 InfRoA4 InfRoA5 InfRoA6 InfRoA7 InfRoA8 InfRoA9
+            InfRoA10
+        InfInt1 InfInt2 InfInt3 InfInt4 InfInt5;
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        RandomID 
+        
+        InfCop4-InfCop10 
+        InfSym5-InfSym10 
+        InfIS1-InfIS10 
+        InfCon1-InfCon5 InfCon7 InfCon8
+        InfPer1-InfPer5 InfPer7-InfPer10
+        InfRoA1-InfRoA7
+        InfInt1-InfInt5;
+
+Analysis:   ESTIMATOR = MLR;
+            Rotation = Target;
+
+Model:      Inf_Coop BY InfCop4-InfCop10                
+                InfSym5~0 InfSym6~0 
+                    InfSym7~0 InfSym8~0 InfSym9~0 InfSym10~0
+                InfIS1~0 InfIS2~0 InfIS3~0 InfIS4~0 InfIS5~0 InfIS6~0 InfIS7~0 
+                    InfIS8~0 InfIS9~0 InfIS10~0
+                InfCon1~0 InfCon2~0 InfCon3~0 InfCon4~0 InfCon5~0
+                    InfCon7~0 InfCon8~0
+                InfPer1~0 InfPer2~0 InfPer3~0 InfPer4~0 InfPer5~0
+                    InfPer7~0 InfPer8~0 InfPer9~0 InfPer10~0
+                InfRoA1~0 InfRoA2~0 InfRoA3~0 InfRoA4~0 InfRoA5~0 InfRoA6~0
+                    InfRoA7~0
+                InfInt1~0 InfInt2~0 InfInt3~0 InfInt4~0 InfInt5~0 (*1);
+           
+            Inf_Symp BY InfSym5-InfSym10
+                InfCop4~0 InfCop5~0 InfCop6~0 
+                    InfCop7~0 InfCop8~0 InfCop9~0 InfCop10~0
+                InfIS1~0 InfIS2~0 InfIS3~0 InfIS4~0 InfIS5~0 InfIS6~0 InfIS7~0 
+                    InfIS8~0 InfIS9~0 InfIS10~0
+                InfCon1~0 InfCon2~0 InfCon3~0 InfCon4~0 InfCon5~0
+                    InfCon7~0 InfCon8~0
+                InfPer1~0 InfPer2~0 InfPer3~0 InfPer4~0 InfPer5~0
+                    InfPer7~0 InfPer8~0 InfPer9~0 InfPer10~0
+                InfRoA1~0 InfRoA2~0 InfRoA3~0 InfRoA4~0 InfRoA5~0 InfRoA6~0
+                    InfRoA7~0
+                InfInt1~0 InfInt2~0 InfInt3~0 InfInt4~0 InfInt5~0 (*1);
+
+            Inf_InSt BY InfIS1-InfIS10
+                InfCop4~0 InfCop5~0 InfCop6~0 
+                    InfCop7~0 InfCop8~0 InfCop9~0 InfCop10~0
+                InfSym5~0 InfSym6~0 
+                    InfSym7~0 InfSym8~0 InfSym9~0 InfSym10~0
+                InfCon1~0 InfCon2~0 InfCon3~0 InfCon4~0 InfCon5~0
+                    InfCon7~0 InfCon8~0
+                InfPer1~0 InfPer2~0 InfPer3~0 InfPer4~0 InfPer5~0
+                    InfPer7~0 InfPer8~0 InfPer9~0 InfPer10~0
+                InfRoA1~0 InfRoA2~0 InfRoA3~0 InfRoA4~0 InfRoA5~0 InfRoA6~0
+                    InfRoA7~0
+                InfInt1~0 InfInt2~0 InfInt3~0 InfInt4~0 InfInt5~0 (*1);
+
+            Inf_Cons BY InfCon1-InfCon5 InfCon7 InfCon8
+                InfCop4~0 InfCop5~0 InfCop6~0 
+                      InfCop7~0 InfCop8~0 InfCop9~0 InfCop10~0
+                InfSym5~0 InfSym6~0 
+                    InfSym7~0 InfSym8~0 InfSym9~0 InfSym10~0
+                InfIS1~0 InfIS2~0 InfIS3~0 InfIS4~0 InfIS5~0 InfIS6~0 InfIS7~0 
+                    InfIS8~0 InfIS9~0 InfIS10~0
+                InfPer1~0 InfPer2~0 InfPer3~0 InfPer4~0 InfPer5~0
+                    InfPer7~0 InfPer8~0 InfPer9~0 InfPer10~0
+                InfRoA1~0 InfRoA2~0 InfRoA3~0 InfRoA4~0 InfRoA5~0 InfRoA6~0
+                    InfRoA7~0
+                InfInt1~0 InfInt2~0 InfInt3~0 InfInt4~0 InfInt5~0 (*1);
+            
+            Inf_Pers BY InfPer1-InfPer5 InfPer7-InfPer10
+                InfCop4~0 InfCop5~0 InfCop6~0 
+                    InfCop7~0 InfCop8~0 InfCop9~0 InfCop10~0
+                InfSym5~0 InfSym6~0 
+                    InfSym7~0 InfSym8~0 InfSym9~0 InfSym10~0
+                InfIS1~0 InfIS2~0 InfIS3~0 InfIS4~0 InfIS5~0 InfIS6~0 InfIS7~0 
+                    InfIS8~0 InfIS9~0 InfIS10~0
+                InfCon1~0 InfCon2~0 InfCon3~0 InfCon4~0 InfCon5~0
+                    InfCon7~0 InfCon8~0
+                InfRoA1~0 InfRoA2~0 InfRoA3~0 InfRoA4~0 InfRoA5~0 InfRoA6~0
+                    InfRoA7~0
+                InfInt1~0 InfInt2~0 InfInt3~0 InfInt4~0 InfInt5~0 (*1);
+
+            Inf_RoAs BY InfRoA1-InfRoA7
+                InfCop4~0 InfCop5~0 InfCop6~0 
+                    InfCop7~0 InfCop8~0 InfCop9~0 InfCop10~0
+                InfSym5~0 InfSym6~0 
+                    InfSym7~0 InfSym8~0 InfSym9~0 InfSym10~0
+                InfIS1~0 InfIS2~0 InfIS3~0 InfIS4~0 InfIS5~0 InfIS6~0 InfIS7~0 
+                    InfIS8~0 InfIS9~0 InfIS10~0
+                InfCon1~0 InfCon2~0 InfCon3~0 InfCon4~0 InfCon5~0
+                    InfCon7~0 InfCon8~0
+                InfPer1~0 InfPer2~0 InfPer3~0 InfPer4~0 InfPer5~0
+                    InfPer7~0 InfPer8~0 InfPer9~0 InfPer10~0
+                InfInt1~0 InfInt2~0 InfInt3~0 InfInt4~0 InfInt5~0 (*1);
+
+            Inf_Intg BY InfInt1-InfInt5
+                InfCop4~0 InfCop5~0 InfCop6~0 
+                    InfCop7~0 InfCop8~0 InfCop9~0 InfCop10~0
+                InfSym5~0 InfSym6~0 
+                    InfSym7~0 InfSym8~0 InfSym9~0 InfSym10~0
+                InfIS1~0 InfIS2~0 InfIS3~0 InfIS4~0 InfIS5~0 InfIS6~0 InfIS7~0 
+                    InfIS8~0 InfIS9~0 InfIS10~0
+                InfCon1~0 InfCon2~0 InfCon3~0 InfCon4~0 InfCon5~0
+                    InfCon7~0 InfCon8~0
+                InfPer1~0 InfPer2~0 InfPer3~0 InfPer4~0 InfPer5~0
+                    InfPer7~0 InfPer8~0 InfPer9~0 InfPer10~0
+                InfRoA1~0 InfRoA2~0 InfRoA3~0 InfRoA4~0 InfRoA5~0 InfRoA6~0
+                    InfRoA7~0 (*1);
+
+OUTPUT:     MODINDICES STAND;
+
+SAVEDATA:   File is Inf_1stOrdESEM.dat;
+            Format is free;
+            Save = FSCORES;
+
+                      

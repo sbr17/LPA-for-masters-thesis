@@ -1,0 +1,128 @@
+TITLE:      Thesis_Ideal_1stOrdESEM; 
+DATA:       FILE IS IdealItems.txt;
+                Format = Free;
+VARIABLE:   NAMES ARE
+        RandomID 
+        
+     PerCop1-PerCop10 
+        PerSym1-PerSym10 
+        PerIS1-PerIS10 
+        PerCon1-PerCon10
+        PerPer1-PerPer10
+        PerRoA1-PerRoA10
+        PerInt1-PerInt5;
+
+    IDvariable = RandomID;
+    Missing are all (-99);
+    Usevariables are 
+        PerCop4-PerCop10 
+        PerSym5-PerSym10 
+        PerIS1-PerIS10 
+        PerCon1-PerCon5 PerCon7 PerCon8
+        PerPer1-PerPer5 PerPer7-PerPer10
+        PerRoA1-PerRoA7
+        PerInt1-PerInt5;
+
+Analysis:   ESTIMATOR = MLR ;
+            Rotation = Target ;
+
+Model:      Per_Coop BY PerCop4-PerCop10
+             PerSym5~0 PerSym6~0 
+                    PerSym7~0 PerSym8~0 PerSym9~0 PerSym10~0
+                PerIS1~0 PerIS2~0 PerIS3~0 PerIS4~0 PerIS5~0 PerIS6~0 PerIS7~0 
+                    PerIS8~0 PerIS9~0 PerIS10~0
+                PerCon1~0 PerCon2~0 PerCon3~0 PerCon4~0 PerCon5~0
+                    PerCon7~0 PerCon8~0
+                PerPer1~0 PerPer2~0 PerPer3~0 PerPer4~0 PerPer5~0 
+                    PerPer7~0 PerPer8~0 PerPer9~0 PerPer10~0
+                PerRoA1~0 PerRoA2~0 PerRoA3~0 PerRoA4~0 PerRoA5~0 PerRoA6~0
+                    PerRoA7~0
+                PerInt1~0 PerInt2~0 PerInt3~0 PerInt4~0 PerInt5~0 (*1);               
+
+            Per_Symp BY PerSym5-PerSym10
+               PerCop4~0 PerCop5~0 PerCop6~0 
+                    PerCop7~0 PerCop8~0 PerCop9~0 PerCop10~0
+                PerIS1~0 PerIS2~0 PerIS3~0 PerIS4~0 PerIS5~0 PerIS6~0 PerIS7~0 
+                    PerIS8~0 PerIS9~0 PerIS10~0
+                PerCon1~0 PerCon2~0 PerCon3~0 PerCon4~0 PerCon5~0 
+                    PerCon7~0 PerCon8~0
+                PerPer1~0 PerPer2~0 PerPer3~0 PerPer4~0 PerPer5~0
+                    PerPer7~0 PerPer8~0 PerPer9~0 PerPer10~0
+                PerRoA1~0 PerRoA2~0 PerRoA3~0 PerRoA4~0 PerRoA5~0 PerRoA6~0
+                    PerRoA7~0
+                PerInt1~0 PerInt2~0 PerInt3~0 PerInt4~0 PerInt5~0 (*1);
+
+            Per_InSt BY PerIS1-PerIS10
+                PerCop4~0 PerCop5~0 PerCop6~0 
+                    PerCop7~0 PerCop8~0 PerCop9~0 PerCop10~0
+                PerSym5~0 PerSym6~0 
+                    PerSym7~0 PerSym8~0 PerSym9~0 PerSym10~0
+                PerCon1~0 PerCon2~0 PerCon3~0 PerCon4~0 PerCon5~0 
+                    PerCon7~0 PerCon8~0
+                PerPer1~0 PerPer2~0 PerPer3~0 PerPer4~0 PerPer5~0
+                    PerPer7~0 PerPer8~0 PerPer9~0 PerPer10~0
+                PerRoA1~0 PerRoA2~0 PerRoA3~0 PerRoA4~0 PerRoA5~0 PerRoA6~0
+                    PerRoA7~0
+                PerInt1~0 PerInt2~0 PerInt3~0 PerInt4~0 PerInt5~0 (*1);
+
+            Per_Cons BY PerCon1-PerCon5 PerCon7 PerCon8                
+               PerCop4~0 PerCop5~0 PerCop6~0 
+                    PerCop7~0 PerCop8~0 PerCop9~0 PerCop10~0
+               PerSym5~0 PerSym6~0 
+                    PerSym7~0 PerSym8~0 PerSym9~0 PerSym10~0
+                PerIS1~0 PerIS2~0 PerIS3~0 PerIS4~0 PerIS5~0 PerIS6~0 PerIS7~0 
+                    PerIS8~0 PerIS9~0 PerIS10~0
+                PerPer1~0 PerPer2~0 PerPer3~0 PerPer4~0 PerPer5~0
+                    PerPer7~0 PerPer8~0 PerPer9~0 PerPer10~0
+                PerRoA1~0 PerRoA2~0 PerRoA3~0 PerRoA4~0 PerRoA5~0 PerRoA6~0
+                    PerRoA7~0
+                PerInt1~0 PerInt2~0 PerInt3~0 PerInt4~0 PerInt5~0 (*1);
+
+            Per_Pers BY PerPer1-PerPer5 PerPer7-PerPer10
+                PerCop4~0 PerCop5~0 PerCop6~0 
+                    PerCop7~0 PerCop8~0 PerCop9~0 PerCop10~0
+                PerSym5~0 PerSym6~0 
+                    PerSym7~0 PerSym8~0 PerSym9~0 PerSym10~0
+                PerIS1~0 PerIS2~0 PerIS3~0 PerIS4~0 PerIS5~0 PerIS6~0 PerIS7~0 
+                    PerIS8~0 PerIS9~0 PerIS10~0
+                PerCon1~0 PerCon2~0 PerCon3~0 PerCon4~0 PerCon5~0
+                    PerCon7~0 PerCon8~0
+                PerRoA1~0 PerRoA2~0 PerRoA3~0 PerRoA4~0 PerRoA5~0 PerRoA6~0
+                    PerRoA7~0
+                PerInt1~0 PerInt2~0 PerInt3~0 PerInt4~0 PerInt5~0 (*1);                
+
+            Per_RoAs BY PerRoA1-PerRoA7
+                PerCop4~0 PerCop5~0 PerCop6~0 
+                    PerCop7~0 PerCop8~0 PerCop9~0 PerCop10~0
+                PerSym5~0 PerSym6~0 
+                    PerSym7~0 PerSym8~0 PerSym9~0 PerSym10~0
+                PerIS1~0 PerIS2~0 PerIS3~0 PerIS4~0 PerIS5~0 PerIS6~0 PerIS7~0 
+                    PerIS8~0 PerIS9~0 PerIS10~0
+                PerCon1~0 PerCon2~0 PerCon3~0 PerCon4~0 PerCon5~0
+                    PerCon7~0 PerCon8~0
+                PerPer1~0 PerPer2~0 PerPer3~0 PerPer4~0 PerPer5~0
+                    PerPer7~0 PerPer8~0 PerPer9~0 PerPer10~0
+                PerInt1~0 PerInt2~0 PerInt3~0 PerInt4~0 PerInt5~0 (*1);
+
+            Per_Intg BY PerInt1-PerInt5
+                PerCop4~0 PerCop5~0 PerCop6~0 
+                    PerCop7~0 PerCop8~0 PerCop9~0 PerCop10~0
+                PerSym5~0 PerSym6~0 
+                    PerSym7~0 PerSym8~0 PerSym9~0 PerSym10~0
+                PerIS1~0 PerIS2~0 PerIS3~0 PerIS4~0 PerIS5~0 PerIS6~0 PerIS7~0 
+                    PerIS8~0 PerIS9~0 PerIS10~0
+                PerCon1~0 PerCon2~0 PerCon3~0 PerCon4~0 PerCon5~0
+                    PerCon7~0 PerCon8~0
+                PerPer1~0 PerPer2~0 PerPer3~0 PerPer4~0 PerPer5~0
+                    PerPer7~0 PerPer8~0 PerPer9~0 PerPer10~0
+                PerRoA1~0 PerRoA2~0 PerRoA3~0 PerRoA4~0 PerRoA5~0 PerRoA6~0
+                    PerRoA7~0 (*1);
+
+OUTPUT:     MODINDICES STAND;
+
+  SAVEDATA:   File is Ideal_1stOrdESEM.dat;
+              Format is free;
+              Save = FSCORES;
+
+
+                      
